@@ -9,12 +9,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="test"
+        android:text="payment page"
         android:textSize="50dp"/>
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
         android:id="@+id/imageView"
         android:layout_gravity="center"
         android:src="@drawable/test3" />

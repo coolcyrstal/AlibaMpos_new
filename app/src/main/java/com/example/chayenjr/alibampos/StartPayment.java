@@ -39,7 +39,15 @@ public class StartPayment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+//        FrameLayout rl = (FrameLayout)findviewbyid(R.id.startpaymentPage);
+//        ImageView pic;
+//        FrameLayout.LayoutParams params;
 //
+//        pic = new ImageView(StartPayment.);
+//        params = new FrameLayout.LayoutParams(30, 40);
+//        params.leftMargin = 100;
+//        params.topMargin = 200;
+//        rl.addView(pic, params);
 //        testpic.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.imageView, 100, 100));
     }
 
