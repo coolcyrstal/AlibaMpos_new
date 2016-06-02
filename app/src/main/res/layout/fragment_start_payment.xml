@@ -12,11 +12,11 @@
         android:text="test"
         android:textSize="50dp"/>
 
-    <!--<ImageView-->
-        <!--android:layout_width="150dp"-->
-        <!--android:layout_height="150dp"-->
-        <!--android:id="@+id/imageView"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:src="@drawable/testpic" />-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/imageView"
+        android:layout_gravity="center"
+        android:src="@drawable/test3" />
 
 </FrameLayout>
