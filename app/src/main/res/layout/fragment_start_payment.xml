@@ -2,20 +2,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="layout.StartPayment"
+    tools:context=".StartPayment"
     android:id="@+id/startpaymentPage">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="test"
+        android:textSize="50dp"/>
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:id="@+id/imageView"
-        android:layout_gravity="center"
-        android:src="@drawable/testpic" />
+    <!--<ImageView-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:src="@drawable/testpic" />-->
 
 </FrameLayout>
