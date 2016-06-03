@@ -8,12 +8,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
         android:text="payment page"
         android:textSize="50sp"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
         android:id="@+id/imageView"
         android:layout_gravity="center"
@@ -27,7 +29,7 @@
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:layout_gravity="center"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="80dp"
         android:background="@android:color/holo_blue_bright" />
 
 </FrameLayout>
