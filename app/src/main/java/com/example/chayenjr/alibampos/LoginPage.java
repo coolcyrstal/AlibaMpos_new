@@ -110,14 +110,15 @@ public class LoginPage extends AppCompatActivity{
                 username.getText().clear();
                 password.getText().clear();
                 myText.setText("You're login");
-                i.add(R.id.startpaymentPage, fragment);
+//                i.add(R.id.startpaymentPage, fragment);
+                i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 //                i.commit();
                 button.setText("Sign out");
             } else{
                 check_login = 0;
 //                i.remove(fragment);
-                i.hide(fragment);
+                getSupportFragmentManager().popBackStack();
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
 //                i.commit();
                 myText.setText("You're logout");
