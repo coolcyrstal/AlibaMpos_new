@@ -5,12 +5,11 @@
     tools:context=".StartPayment"
     android:id="@+id/startpaymentPage">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="payment page"
-        android:textSize="50dp"/>
+        android:textSize="50sp"/>
 
     <ImageView
         android:layout_width="match_parent"
@@ -19,5 +18,14 @@
         android:id="@+id/imageView"
         android:layout_gravity="center"
         android:src="@drawable/test3" />
+
+    <Button
+        android:layout_width="260dp"
+        android:layout_height="30dp"
+        android:text="Start Payment"
+        android:id="@+id/startpaymentbutton"
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"
+        android:background="@android:color/holo_blue_bright"/>
 
 </FrameLayout>
