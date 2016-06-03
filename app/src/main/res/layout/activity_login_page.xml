@@ -26,12 +26,14 @@
         android:layout_below="@+id/textView"
         android:textColorHighlight="#ff7eff15"
         android:textColorHint="#ffff25e6"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="150dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,28 +41,29 @@
         android:ems="10"
         android:id="@+id/textPassword"
         android:layout_below="@+id/textUsername"
+        android:layout_marginTop="200dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/textUsername"
         android:layout_alignEnd="@+id/textUsername"
         android:textColorHint="#ffff299f"
         android:hint="Password"
-        android:layout_gravity="left|center_vertical" />
+        android:layout_gravity="left|top" />
 
-    <!-- This FrameLayout insets its children based on system windows using
-         android:fitsSystemWindows. -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:id="@+id/startpaymentPage">
+        android:id="@+id/startpaymentPage"
+        android:layout_gravity="left|center_vertical">
 
         <LinearLayout
             android:id="@+id/fullscreen_content_controls"
             style="?metaButtonBarStyle"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginTop="50dp"
             android:background="@color/black_overlay"
             android:orientation="horizontal"
             tools:ignore="UselessParent">
@@ -69,15 +72,13 @@
                 android:id="@+id/signin_button"
                 style="?metaButtonBarButtonStyle"
                 android:layout_width="100dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Sign in"
                 android:nestedScrollingEnabled="false"
                 android:onClick="buttonOnClick" />
 
         </LinearLayout>
-
-
 
 
     </FrameLayout>

@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -104,6 +105,9 @@ public class LoginPage extends AppCompatActivity{
             FragmentTransaction i = getSupportFragmentManager().beginTransaction();
             i.add(R.id.startpaymentPage, fragment);
             i.commit();
+            toggle();
+            Button button = (Button)findViewById(R.id.signin_button);
+            button.setText("Sign out");
         }
     }
    
