@@ -99,35 +99,35 @@ public class LoginPage extends AppCompatActivity{
         StartPayment fragment = new StartPayment();
         FragmentTransaction i = getSupportFragmentManager().beginTransaction();
 
-//        lView.removeAllViews();
+        Button button = (Button)findViewById(R.id.signin_button);
 
-        if(check_login == 1){
-            i.remove(fragment);
-//            i.commit();
-
-            check_login = 0;
-            myText.setText("You're logout");
-//            lView.addView(myText);
-        }
         if(check_login == 0 && username.getText().toString().equals("") && password.getText().toString().equals("")){
             //wrong password
         } else {
             //correct password
-            check_login = 1;
-            username.getText().clear();
-            password.getText().clear();
-            myText.setText("You're login");
+            if(check_login == 0){
+                check_login = 1;
+                username.getText().clear();
+                password.getText().clear();
+                myText.setText("You're login");
+                i.add(R.id.startpaymentPage, fragment);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//                i.commit();
+                button.setText("Sign out");
+            } else{
+                check_login = 0;
+//                i.remove(fragment);
+                i.hide(fragment);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+//                i.commit();
+                myText.setText("You're logout");
+                button.setText("Sign in");
+            }
             lView.addView(myText);
-            i.add(R.id.startpaymentPage, fragment);
             i.commit();
 //            toggle();
-            Button button = (Button)findViewById(R.id.signin_button);
-            button.setText("Sign out");
         }
     }
-   
-
-
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
