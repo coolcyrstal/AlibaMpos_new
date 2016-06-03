@@ -8,25 +8,27 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class LoginPage extends AppCompatActivity {
+public class LoginPage extends AppCompatActivity{
 
     private static final boolean AUTO_HIDE = true;
-
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
-
     private static final int UI_ANIMATION_DELAY = 300;
+    public static int check_login = 0;
     private final Handler mHideHandler = new Handler();
     private View mContentView;
+    private EditText username, password;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
         public void run() {
-
             mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
                     | View.SYSTEM_UI_FLAG_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -54,7 +56,6 @@ public class LoginPage extends AppCompatActivity {
             hide();
         }
     };
-
     private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -64,6 +65,7 @@ public class LoginPage extends AppCompatActivity {
             return false;
         }
     };
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +75,9 @@ public class LoginPage extends AppCompatActivity {
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = findViewById(R.id.fullscreen_content);
+        mContentView = findViewById(R.id.textView);
 
-        //
+
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,17 +85,30 @@ public class LoginPage extends AppCompatActivity {
                 toggle();
             }
         });
-
         findViewById(R.id.signin_button).setOnTouchListener(mDelayHideTouchListener);
     }
 
     public void buttonOnClick(View v){
-
-        StartPayment fragment = new StartPayment();
-        FragmentTransaction i = getSupportFragmentManager().beginTransaction();
-        i.add(R.id.startpaymentPage, fragment);
-        i.commit();
+        username = (EditText)findViewById(R.id.textUsername);
+        password = (EditText)findViewById(R.id.textPassword);
+        if(username.getText().toString().equals("") && password.getText().toString().equals("")){
+            //wrong password
+        } else {
+            //correct password
+            check_login = 1;
+            FrameLayout lView = (FrameLayout)findViewById(R.id.loginpage);
+            TextView myText = new TextView(this);
+            myText.setText("You are login");
+            lView.addView(myText);
+            StartPayment fragment = new StartPayment();
+            FragmentTransaction i = getSupportFragmentManager().beginTransaction();
+            i.add(R.id.startpaymentPage, fragment);
+            i.commit();
+        }
     }
+   
+
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {

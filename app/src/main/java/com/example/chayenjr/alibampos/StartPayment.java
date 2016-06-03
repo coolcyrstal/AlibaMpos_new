@@ -39,7 +39,9 @@ public class StartPayment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        if(LoginPage.check_login == 1){
 
+        }
 //        testpic.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.imageView, 100, 100));
     }
 

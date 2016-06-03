@@ -3,21 +3,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context="com.example.chayenjr.alibampos.LoginPage">
+    tools:context="com.example.chayenjr.alibampos.LoginPage"
+    android:id="@+id/loginpage">
 
-    <!-- The primary full-screen view. This can be replaced with whatever view
-         is needed to present your content, e.g. VideoView, SurfaceView,
-         TextureView, etc. -->
     <TextView
-        android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="Junior"
-        android:textColor="#33b5e5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="AlibaMpos"
         android:textSize="50sp"
-        android:textStyle="bold" />
+        android:id="@+id/textView"
+        android:textStyle="bold"
+        android:textColor="#33b5e5"
+        android:layout_gravity="center_horizontal|top" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textUsername"
+        android:hint="Enter Username"
+        android:focusable="true"
+        android:layout_below="@+id/textView"
+        android:textColorHighlight="#ff7eff15"
+        android:textColorHint="#ffff25e6"
+        android:layout_marginTop="46dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/textPassword"
+        android:layout_below="@+id/textUsername"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textUsername"
+        android:layout_alignEnd="@+id/textUsername"
+        android:textColorHint="#ffff299f"
+        android:hint="Password"
+        android:layout_gravity="left|center_vertical" />
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
@@ -44,9 +72,14 @@
                 android:layout_height="50dp"
                 android:layout_weight="1"
                 android:text="Sign in"
+                android:nestedScrollingEnabled="false"
                 android:onClick="buttonOnClick" />
 
         </LinearLayout>
+
+
+
+
     </FrameLayout>
 
 </FrameLayout>
