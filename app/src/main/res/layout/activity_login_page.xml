@@ -62,7 +62,7 @@
             style="?metaButtonBarStyle"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|center_horizontal"
+            android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="50dp"
             android:background="@color/black_overlay"
             android:orientation="horizontal"

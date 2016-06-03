@@ -60,9 +60,9 @@ public class LoginPage extends AppCompatActivity{
     private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
-            if (AUTO_HIDE) {
-                delayedHide(AUTO_HIDE_DELAY_MILLIS);
-            }
+//            if (AUTO_HIDE) {
+//                delayedHide(AUTO_HIDE_DELAY_MILLIS);
+//            }
             return false;
         }
     };
@@ -92,20 +92,35 @@ public class LoginPage extends AppCompatActivity{
     public void buttonOnClick(View v){
         username = (EditText)findViewById(R.id.textUsername);
         password = (EditText)findViewById(R.id.textPassword);
-        if(username.getText().toString().equals("") && password.getText().toString().equals("")){
+
+        FrameLayout lView = (FrameLayout)findViewById(R.id.loginpage);
+        TextView myText = new TextView(this);
+
+        StartPayment fragment = new StartPayment();
+        FragmentTransaction i = getSupportFragmentManager().beginTransaction();
+
+//        lView.removeAllViews();
+
+        if(check_login == 1){
+            i.remove(fragment);
+//            i.commit();
+
+            check_login = 0;
+            myText.setText("You're logout");
+//            lView.addView(myText);
+        }
+        if(check_login == 0 && username.getText().toString().equals("") && password.getText().toString().equals("")){
             //wrong password
         } else {
             //correct password
             check_login = 1;
-            FrameLayout lView = (FrameLayout)findViewById(R.id.loginpage);
-            TextView myText = new TextView(this);
-            myText.setText("You are login");
+            username.getText().clear();
+            password.getText().clear();
+            myText.setText("You're login");
             lView.addView(myText);
-            StartPayment fragment = new StartPayment();
-            FragmentTransaction i = getSupportFragmentManager().beginTransaction();
             i.add(R.id.startpaymentPage, fragment);
             i.commit();
-            toggle();
+//            toggle();
             Button button = (Button)findViewById(R.id.signin_button);
             button.setText("Sign out");
         }

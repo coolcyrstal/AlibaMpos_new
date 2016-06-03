@@ -17,7 +17,8 @@ public class StartPayment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
     private String mParam2;
-   // private OnFragmentInteractionListener mListener;
+    private View view;
+    // private OnFragmentInteractionListener mListener;
 
     public StartPayment() {
         // Required empty public constructor
@@ -39,10 +40,17 @@ public class StartPayment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        if(LoginPage.check_login == 1){
-
-        }
 //        testpic.setImageBitmap(decodeSampledBitmapFromResource(getResources(), R.id.imageView, 100, 100));
+//        view.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                StartPayment fragment = new StartPayment();
+//                FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+//                i.add(R.id.startpaymentPage, fragment);
+//                i.commit();
+//            }
+//        });
+//        view.findViewById(R.id.startpaymentbutton);
     }
 
     @Override
@@ -51,6 +59,10 @@ public class StartPayment extends Fragment {
         // Inflate the layout for this fragment
 
         return inflater.inflate(R.layout.fragment_start_payment, container, false);
+    }
+
+    public void buttonStartPaymentOnClick(View view){
+
     }
 
     public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {

@@ -24,8 +24,10 @@
         android:layout_height="30dp"
         android:text="Start Payment"
         android:id="@+id/startpaymentbutton"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
         android:layout_gravity="center"
         android:layout_marginTop="55dp"
-        android:background="@android:color/holo_blue_bright"/>
+        android:background="@android:color/holo_blue_bright" />
 
 </FrameLayout>
