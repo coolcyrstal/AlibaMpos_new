@@ -3,33 +3,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StartPayment"
+    android:padding="40dp"
     android:id="@+id/startpaymentPage">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
         android:text="payment page"
-        android:textSize="50sp"/>
+        android:textSize="40dp"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:adjustViewBounds="true"
         android:id="@+id/imageView"
         android:layout_gravity="center"
         android:src="@drawable/test3" />
 
-    <Button
-        android:layout_width="260dp"
-        android:layout_height="30dp"
-        android:text="Start Payment"
-        android:id="@+id/startpaymentbutton"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
-        android:background="@android:color/holo_blue_bright" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/moneypay"
+        android:layout_gravity="left|center_vertical">
+
+        <Button
+            android:layout_width="260dp"
+            android:layout_height="30dp"
+            android:text="Start Payment"
+            android:id="@+id/startpaymentbutton"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/holo_blue_bright"
+            android:onClick="buttonOnClick"
+            android:clickable="true" />
+
+    </FrameLayout>
+
+
 
 </FrameLayout>

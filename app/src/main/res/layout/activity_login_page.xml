@@ -77,7 +77,6 @@
                 android:text="Sign in"
                 android:nestedScrollingEnabled="false"
                 android:onClick="buttonOnClick" />
-
         </LinearLayout>
 
 
