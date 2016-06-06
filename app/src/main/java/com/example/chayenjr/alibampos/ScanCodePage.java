@@ -1,11 +1,17 @@
 package com.example.chayenjr.alibampos;
 
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
@@ -25,6 +31,7 @@ public class ScanCodePage extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    static final String ACTION_SCAN = "com.google.zxing.client.android.SCAN";
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,10 +71,63 @@ public class ScanCodePage extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_scan_code_page, container, false);
         // Inflate the layout for this fragment
+        Button scan= (Button)view.findViewById(R.id.goscanbutton);
+        scan.setOnClickListener(getButtonOnClickListener());
         return view;
     }
 
+    private View.OnClickListener getButtonOnClickListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scanCode(v);
+            }
+        };
+    }
 
+    public void scanCode(View v){
+        try {
+            Intent intent = new Intent(ACTION_SCAN);
+            intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
+            startActivityForResult(intent, 0);
+        }catch (ActivityNotFoundException e){
+//            showDialog(getActivity(), "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
+        }
+    }
+
+    private static AlertDialog showDialog(final AppCompatActivity act, CharSequence title,
+                                          CharSequence message, CharSequence buttonYes, CharSequence buttonNo){
+        AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
+        downloadDialog.setTitle(title).setMessage(message).setPositiveButton(buttonYes, new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Uri uri = Uri.parse("market://search?q=pname:" + "com.google.zxing.client.android");
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                try {
+                    act.startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                }
+            }
+        }).setNegativeButton(buttonNo, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {}
+        });
+        return downloadDialog.show();
+    }
+
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+//        if(requestCode == 0) {
+//            if(resultCode == RESULT_OK) {
+//                String contents = intent.getStringExtra("SCAN_RESULT");
+//                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+//                Toast.makeText(this,
+//                        "Content:" + contents + " Format:" + format,
+//                        Toast.LENGTH_LONG).show();
+//            }
+//        }
+//    }
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
