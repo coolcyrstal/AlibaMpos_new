@@ -3,6 +3,7 @@ package com.example.chayenjr.alibampos;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -116,6 +117,11 @@ public class MoneyValue extends Fragment {
                 paymentmoney = "";
                 break;
             case R.id.pay:
+                ScanCodePage fragment = new ScanCodePage();
+                FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+                i.replace(R.id.scancodepage, fragment).addToBackStack(null);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                i.commit();
                 break;
             case R.id.one:
                 paymentmoney += "1";
