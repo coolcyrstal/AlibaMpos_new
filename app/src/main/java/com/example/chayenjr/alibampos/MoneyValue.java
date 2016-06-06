@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.gms.plus.PlusOneButton;
 
@@ -59,10 +61,71 @@ public class MoneyValue extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_money_value, container, false);
-       
+
+        Button del = (Button)view.findViewById(R.id.del);
+        del.setOnClickListener(getButtonOnClickListener());
+        Button ac = (Button)view.findViewById(R.id.ac);
+        ac.setOnClickListener(getButtonOnClickListener());
+        Button pay = (Button)view.findViewById(R.id.pay);
+        pay.setOnClickListener(getButtonOnClickListener());
+
+        Button one = (Button)view.findViewById(R.id.one);
+        one.setOnClickListener(getButtonOnClickListener());
+        Button two = (Button)view.findViewById(R.id.two);
+        two.setOnClickListener(getButtonOnClickListener());
+        Button three = (Button)view.findViewById(R.id.three);
+        three.setOnClickListener(getButtonOnClickListener());
+        Button four = (Button)view.findViewById(R.id.four);
+        four.setOnClickListener(getButtonOnClickListener());
+        Button five = (Button)view.findViewById(R.id.five);
+        five.setOnClickListener(getButtonOnClickListener());
+        Button six = (Button)view.findViewById(R.id.six);
+        six.setOnClickListener(getButtonOnClickListener());
+        Button seven = (Button)view.findViewById(R.id.seven);
+        seven.setOnClickListener(getButtonOnClickListener());
+        Button eight = (Button)view.findViewById(R.id.eight);
+        eight.setOnClickListener(getButtonOnClickListener());
+        Button nine = (Button)view.findViewById(R.id.nine);
+        nine.setOnClickListener(getButtonOnClickListener());
+        Button zero = (Button)view.findViewById(R.id.zero);
+        zero.setOnClickListener(getButtonOnClickListener());
+        Button dot= (Button)view.findViewById(R.id.dot);
+        dot.setOnClickListener(getButtonOnClickListener());
+
         return view;
     }
 
+    private View.OnClickListener getButtonOnClickListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonOnClickGoScanCode(v);
+            }
+        };
+    }
+
+    public void buttonOnClickGoScanCode(View v){
+        EditText moneypay = (EditText)getActivity().findViewById(R.id.textmoney);
+        switch (v.getId()){
+            case R.id.del:
+
+            case R.id.ac:
+                moneypay.getText().clear();
+            case R.id.pay:
+            case R.id.one:
+                
+            case R.id.two:
+            case R.id.three:
+            case R.id.four:
+            case R.id.five:
+            case R.id.six:
+            case R.id.seven:
+            case R.id.eight:
+            case R.id.nine:
+            case R.id.zero:
+            case R.id.dot:
+        }
+    }
 //   
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name

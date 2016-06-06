@@ -15,12 +15,13 @@
         <!--android:src="@drawable/moneypay"-->
         <!--android:scaleType="fitXY" />-->
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textmoney"
         android:hint = "0.00"
         android:focusable="true"
+        android:editable="false"
         android:layout_below="@+id/textView"
         android:textColorHighlight="#ff7eff15"
         android:textColorHint="#ffff25e6"
