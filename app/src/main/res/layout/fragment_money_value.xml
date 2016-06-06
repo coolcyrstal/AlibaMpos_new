@@ -20,10 +20,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/textmoney"
         android:hint = "0.00"
-        android:focusable="true"
         android:editable="false"
+        android:focusable="true"
         android:layout_below="@+id/textView"
-        android:textColorHighlight="#ff7eff15"
+        android:textColorHighlight="#ffff25e6"
         android:textColorHint="#ffff25e6"
         android:textSize="40dp"
         android:textStyle="bold"
@@ -64,22 +64,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/one"
-                android:text="1"
-            />
+                android:text="1" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/two"
-                android:text="2"
-            />
+                android:text="2" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/three"
-                android:text="3"
-            />
+                android:text="3" />
         </LinearLayout>
 
         <LinearLayout 
@@ -90,22 +87,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/four"
-                android:text="4"
-            />
+                android:text="4" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/five"
-                android:text="5"
-            />
+                android:text="5" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/six"
-                android:text="6"
-            />
+                android:text="6" />
         </LinearLayout>
 
         <LinearLayout 
@@ -116,22 +110,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/seven"
-                android:text="7"
-            />
+                android:text="7" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/eight"
-                android:text="8"
-            />
+                android:text="8" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/nine"
-                android:text="9"
-            />
+                android:text="9" />
         </LinearLayout>
 
         <LinearLayout 
@@ -143,23 +134,20 @@
                 android:layout_height="wrap_content"
                 android:id = "@+id/zero"
                 android:layout_weight="2"
-                android:text="0"
-            />
+                android:text="0" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/dot"
-                android:text="."
-            />
+                android:text="." />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id = "@+id/ac"
                 android:layout_weight="2"
-                android:text="ac"
-                />
+                android:text="ac" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

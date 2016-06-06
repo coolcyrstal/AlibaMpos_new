@@ -31,6 +31,7 @@ public class MoneyValue extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String paymentmoney = "";
     private PlusOneButton mPlusOneButton;
 
     private OnFragmentInteractionListener mListener;
@@ -105,26 +106,53 @@ public class MoneyValue extends Fragment {
     }
 
     public void buttonOnClickGoScanCode(View v){
-        EditText moneypay = (EditText)getActivity().findViewById(R.id.textmoney);
+        EditText moneypay = (EditText) getActivity().findViewById(R.id.textmoney);
+        paymentmoney = moneypay.getText().toString();
         switch (v.getId()){
             case R.id.del:
-
+                paymentmoney = moneypay.getText().toString().substring(0, moneypay.getText().length() - 1);
+                break;
             case R.id.ac:
-                moneypay.getText().clear();
+                paymentmoney = "";
+                break;
             case R.id.pay:
+                break;
             case R.id.one:
-                
+                paymentmoney += "1";
+                break;
             case R.id.two:
+                paymentmoney += "2";
+                break;
             case R.id.three:
+                paymentmoney += "3";
+                break;
             case R.id.four:
+                paymentmoney += "4";
+                break;
             case R.id.five:
+                paymentmoney += "5";
+                break;
             case R.id.six:
+                paymentmoney += "6";
+                break;
             case R.id.seven:
+                paymentmoney += "7";
+                break;
             case R.id.eight:
+                paymentmoney += "8";
+                break;
             case R.id.nine:
+                paymentmoney += "9";
+                break;
             case R.id.zero:
+                paymentmoney += "0";
+                break;
             case R.id.dot:
+                paymentmoney += ".";
+                break;
+            default:break;
         }
+        moneypay.setText(paymentmoney);
     }
 //   
     public interface OnFragmentInteractionListener {
