@@ -56,6 +56,7 @@ public class StartPayment extends Fragment {
             public void onClick(View v){
                 button.setText("go go go ---------");
                 buttonOnClickGoPayment();
+//                removeView();
             }
         });
 
@@ -65,10 +66,15 @@ public class StartPayment extends Fragment {
     public void buttonOnClickGoPayment(){
         MoneyValue fragment = new MoneyValue();
         FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-//        i.add(R.id.moneypay, fragment);
         i.replace(R.id.moneypay, fragment).addToBackStack(null);
         i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         i.commit();
+    }
+
+    public void removeView(){
+//        getActivity().findViewById(R.id.startpaymentbutton).setVisibility(View.INVISIBLE);
+//        getActivity().findViewById(R.id.textpaymentPage).setVisibility(View.INVISIBLE);
+//        getFragmentManager().popBackStack();
     }
 
     public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
