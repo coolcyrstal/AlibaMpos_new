@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,22 +49,6 @@ public class LoginPage extends AppCompatActivity{
             mControlsView.setVisibility(View.VISIBLE);
         }
     };
-    private boolean mVisible;
-    private final Runnable mHideRunnable = new Runnable() {
-        @Override
-        public void run() {
-            hide();
-        }
-    };
-    private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-//            if (AUTO_HIDE) {
-//                delayedHide(AUTO_HIDE_DELAY_MILLIS);
-//            }
-            return false;
-        }
-    };
     
 
     @Override
@@ -73,19 +56,29 @@ public class LoginPage extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        mVisible = true;
-        mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = findViewById(R.id.textView);
+        findViewById(R.id.textView).setVisibility(View.INVISIBLE);
+        findViewById(R.id.textUsername).setVisibility(View.INVISIBLE);
+        findViewById(R.id.textPassword).setVisibility(View.INVISIBLE);
+        findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
 
+        SplashScreen fragment = new SplashScreen();
+        FragmentTransaction i = getSupportFragmentManager().beginTransaction();
+        i.replace(R.id.splashscreenpage, fragment).addToBackStack(null);
+        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        i.commit();
 
-        // Set up the user interaction to manually show or hide the system UI.
-        mContentView.setOnClickListener(new View.OnClickListener() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
-                toggle();
+            public void run() {
+                // Do something after 3s = 3000ms
+                getSupportFragmentManager().popBackStack();
+                findViewById(R.id.textView).setVisibility(View.VISIBLE);
+                findViewById(R.id.textUsername).setVisibility(View.VISIBLE);
+                findViewById(R.id.textPassword).setVisibility(View.VISIBLE);
+                findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
             }
-        });
-        findViewById(R.id.signin_button).setOnTouchListener(mDelayHideTouchListener);
+        }, 3000);
     }
 
     public void buttonOnClick(View v){
@@ -131,51 +124,6 @@ public class LoginPage extends AppCompatActivity{
             }
             lView.addView(myText);
             i.commit();
-//            toggle();
         }
-    }
-
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        delayedHide(100);
-    }
-
-    private void toggle() {
-        if (mVisible) {
-            hide();
-        } else {
-            show();
-        }
-    }
-
-    private void hide() {
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
-        mControlsView.setVisibility(View.GONE);
-        mVisible = false;
-
-        // Schedule a runnable to remove the status and navigation bar after a delay
-        mHideHandler.removeCallbacks(mShowPart2Runnable);
-        mHideHandler.postDelayed(mHidePart2Runnable, UI_ANIMATION_DELAY);
-    }
-
-    @SuppressLint("InlinedApi")
-    private void show() {
-        // Show the system bar
-        mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
-        mVisible = true;
-
-        // Schedule a runnable to display UI elements after a delay
-        mHideHandler.removeCallbacks(mHidePart2Runnable);
-        mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
-    }
-
-    private void delayedHide(int delayMillis) {
-        mHideHandler.removeCallbacks(mHideRunnable);
-        mHideHandler.postDelayed(mHideRunnable, delayMillis);
     }
 }
