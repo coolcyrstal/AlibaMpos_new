@@ -81,6 +81,7 @@ public class SendRecipePage extends Fragment {
     }
 
     public void sendrecipe(View v){
+        getActivity().findViewById(R.id.sendrecipebutton).setVisibility(View.INVISIBLE);
         RecipePage fragment = new RecipePage();
         FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
         i.replace(R.id.recipepage, fragment).addToBackStack(null);

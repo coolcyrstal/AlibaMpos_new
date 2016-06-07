@@ -1,10 +1,12 @@
 package com.example.chayenjr.alibampos;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -95,6 +97,7 @@ public class LoginPage extends AppCompatActivity{
 
         if(check_login == 0 && username.getText().toString().equals("") && password.getText().toString().equals("")){
             //wrong password
+            showDialog(LoginPage.this, "Username or password incorrect", "Please type again", "OK");
         } else {
             //correct password
             if(check_login == 0){
@@ -125,5 +128,16 @@ public class LoginPage extends AppCompatActivity{
             lView.addView(myText);
             i.commit();
         }
+    }
+
+    private static AlertDialog showDialog(final AppCompatActivity act, CharSequence title,
+                                          CharSequence message, CharSequence buttonYes){
+        AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
+        downloadDialog.setTitle(title).setMessage(message).setPositiveButton(buttonYes, new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        return downloadDialog.show();
     }
 }
