@@ -104,7 +104,7 @@ public class LoginPage extends AppCompatActivity{
                 check_login = 1;
                 username.getText().clear();
                 password.getText().clear();
-                myText.setText("You're login");
+//                myText.setText("You're login");
                 findViewById(R.id.textView).setVisibility(View.INVISIBLE);
 //                i.add(R.id.startpaymentPage, fragment);
                 i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
@@ -122,7 +122,7 @@ public class LoginPage extends AppCompatActivity{
                 getSupportFragmentManager().popBackStack();
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
 //                i.commit();
-                myText.setText("You're logout");
+//                myText.setText("You're logout");
                 button.setText("Sign in");
             }
             lView.addView(myText);

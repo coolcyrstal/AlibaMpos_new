@@ -33,8 +33,10 @@ public class MoneyValue extends Fragment {
     private String mParam1;
     private String mParam2;
     public static String paymentmoney = "";
+    public static String paymentmoneydot = "";
+    public static String showreceipt = "";
     private PlusOneButton mPlusOneButton;
-
+    private int checkdot = 0;
     private OnFragmentInteractionListener mListener;
 
     public MoneyValue() {
@@ -109,59 +111,164 @@ public class MoneyValue extends Fragment {
     public void buttonOnClickGoScanCode(View v){
         EditText moneypay = (EditText) getActivity().findViewById(R.id.textmoney);
         paymentmoney = moneypay.getText().toString();
-        switch (v.getId()){
-            case R.id.del:
-                paymentmoney = moneypay.getText().toString().substring(0, moneypay.getText().length() - 1);
-                break;
-            case R.id.ac:
-                paymentmoney = "";
-                break;
-            case R.id.pay:
-                getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
-                getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
-                ScanCodePage fragment = new ScanCodePage();
-                FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-                i.replace(R.id.scancodepage, fragment).addToBackStack(null);
-                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                i.commit();
-                break;
-            case R.id.one:
-                paymentmoney += "1";
-                break;
-            case R.id.two:
-                paymentmoney += "2";
-                break;
-            case R.id.three:
-                paymentmoney += "3";
-                break;
-            case R.id.four:
-                paymentmoney += "4";
-                break;
-            case R.id.five:
-                paymentmoney += "5";
-                break;
-            case R.id.six:
-                paymentmoney += "6";
-                break;
-            case R.id.seven:
-                paymentmoney += "7";
-                break;
-            case R.id.eight:
-                paymentmoney += "8";
-                break;
-            case R.id.nine:
-                paymentmoney += "9";
-                break;
-            case R.id.zero:
-                paymentmoney += "0";
-                break;
-            case R.id.dot:
-                paymentmoney += ".";
-                break;
-            default:break;
+        EditText moneydot = (EditText) getActivity().findViewById(R.id.textmoneydot);
+        paymentmoneydot = moneydot.getText().toString();
+        if(checkdot == 0){
+            switch (v.getId()){
+                case R.id.del:
+                    paymentmoney = moneypay.getText().toString().substring(0, moneypay.getText().length() - 1);
+                    break;
+                case R.id.ac:
+                    paymentmoney = "";
+                    break;
+                case R.id.pay:
+                    getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
+                    getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
+                    ScanCodePage fragment = new ScanCodePage();
+                    FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+                    i.replace(R.id.scancodepage, fragment).addToBackStack(null);
+                    i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                    i.commit();
+                    showreceipt = paymentmoney + "." + paymentmoneydot;
+                    break;
+                case R.id.one:
+                    paymentmoney += "1";
+                    break;
+                case R.id.two:
+                    paymentmoney += "2";
+                    break;
+                case R.id.three:
+                    paymentmoney += "3";
+                    break;
+                case R.id.four:
+                    paymentmoney += "4";
+                    break;
+                case R.id.five:
+                    paymentmoney += "5";
+                    break;
+                case R.id.six:
+                    paymentmoney += "6";
+                    break;
+                case R.id.seven:
+                    paymentmoney += "7";
+                    break;
+                case R.id.eight:
+                    paymentmoney += "8";
+                    break;
+                case R.id.nine:
+                    paymentmoney += "9";
+                    break;
+                case R.id.zero:
+                    paymentmoney += "0";
+                    break;
+                case R.id.dot:
+                    checkdot = 1;
+                    break;
+                default:break;
+            }
+        } else{
+            if(moneydot.length() == 2){
+                switch (v.getId()){
+                    case R.id.dot:
+                        break;
+                    case R.id.del:
+                        paymentmoneydot = moneydot.getText().toString().substring(0, moneydot.length() - 1);
+                        break;
+                    case R.id.ac:
+                        paymentmoney = "";
+                        paymentmoneydot = "";
+                        checkdot = 0;
+                        break;
+                    case R.id.pay:
+                        getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
+                        getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
+                        ScanCodePage fragment = new ScanCodePage();
+                        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+                        i.replace(R.id.scancodepage, fragment).addToBackStack(null);
+                        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                        i.commit();
+                        showreceipt = paymentmoney + "." + paymentmoneydot;
+                        break;
+                    case R.id.one:break;
+                    case R.id.two:break;
+                    case R.id.three:break;
+                    case R.id.four:break;
+                    case R.id.five:break;
+                    case R.id.six:break;
+                    case R.id.seven:break;
+                    case R.id.eight:break;
+                    case R.id.nine:break;
+                    case R.id.zero:break;
+                    default:break;
+                }
+            }
+            else if(moneydot.length() == 1){
+                switch (v.getId()){
+                    case R.id.dot:
+                        break;
+                    case R.id.del:
+                        paymentmoneydot = "";
+                        break;
+                    case R.id.ac:
+                        paymentmoney = "";
+                        paymentmoneydot = "";
+                        checkdot = 0;
+                        break;
+                    case R.id.pay:
+                        getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
+                        getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
+                        ScanCodePage fragment = new ScanCodePage();
+                        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+                        i.replace(R.id.scancodepage, fragment).addToBackStack(null);
+                        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                        i.commit();
+                        showreceipt = paymentmoney + "." + paymentmoneydot;
+                        break;
+                    case R.id.one:paymentmoneydot += "1";break;
+                    case R.id.two:paymentmoneydot += "2";break;
+                    case R.id.three:paymentmoneydot += "3";break;
+                    case R.id.four:paymentmoneydot += "4";break;
+                    case R.id.five:paymentmoneydot += "5";break;
+                    case R.id.six:paymentmoneydot += "6";break;
+                    case R.id.seven:paymentmoneydot += "7";break;
+                    case R.id.eight:paymentmoneydot += "8";break;
+                    case R.id.nine:paymentmoneydot += "9";break;
+                    case R.id.zero:paymentmoneydot += "0";break;
+                    default:break;
+                }
+            }
+            else{
+                switch (v.getId()){
+                    case R.id.dot:break;
+                    case R.id.del:break;
+                    case R.id.ac:paymentmoney = "";checkdot = 0;break;
+                    case R.id.pay:
+                        getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
+                        getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
+                        ScanCodePage fragment = new ScanCodePage();
+                        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+                        i.replace(R.id.scancodepage, fragment).addToBackStack(null);
+                        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                        i.commit();
+                        showreceipt = paymentmoney + "." + paymentmoneydot;
+                        break;
+                    case R.id.one:paymentmoneydot += "1";break;
+                    case R.id.two:paymentmoneydot += "2";break;
+                    case R.id.three:paymentmoneydot += "3";break;
+                    case R.id.four:paymentmoneydot += "4";break;
+                    case R.id.five:paymentmoneydot += "5";break;
+                    case R.id.six:paymentmoneydot += "6";break;
+                    case R.id.seven:paymentmoneydot += "7";break;
+                    case R.id.eight:paymentmoneydot += "8";break;
+                    case R.id.nine:paymentmoneydot += "9";break;
+                    case R.id.zero:paymentmoneydot += "0";break;
+                    default:break;
+                }
+            }
         }
         moneypay.setText(paymentmoney);
-        double moneypayint = Double.parseDouble(paymentmoney);
+        moneydot.setText(paymentmoneydot);
+//        double moneypayint = Double.parseDouble(paymentmoney);
     }
 //   
     public interface OnFragmentInteractionListener {

@@ -14,21 +14,54 @@
         <!--android:layout_gravity="center"-->
         <!--android:src="@drawable/moneypay"-->
         <!--android:scaleType="fitXY" />-->
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textmoney"
-        android:hint = "0.00"
+        android:hint = "0"
         android:editable="false"
         android:focusable="true"
         android:layout_below="@+id/textView"
         android:textColorHighlight="#ffff25e6"
         android:textColorHint="#ffff25e6"
-        android:textSize="40dp"
+        android:textColor="#ffff25e6"
+        android:textSize="30dp"
         android:textStyle="bold"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="150dp"/>
+        android:layout_gravity="right"
+        android:layout_marginRight="150dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textdot"
+        android:hint = "."
+        android:editable="false"
+        android:focusable="true"
+        android:layout_below="@+id/textView"
+        android:textColorHighlight="#ffff25e6"
+        android:textColorHint="#ffff25e6"
+        android:textColor="#ffff25e6"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="145dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textmoneydot"
+        android:hint = "00"
+        android:editable="false"
+        android:focusable="true"
+        android:layout_below="@+id/textView"
+        android:textColorHighlight="#ffff25e6"
+        android:textColorHint="#ffff25e6"
+        android:textColor="#ffff25e6"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="110dp"/>
 
     <Button
         android:layout_width="50dp"
