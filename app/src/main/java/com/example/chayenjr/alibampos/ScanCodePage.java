@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -72,8 +71,10 @@ public class ScanCodePage extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_scan_code_page, container, false);
         // Inflate the layout for this fragment
-        Button scan= (Button)view.findViewById(R.id.goscanbutton);
-        scan.setOnClickListener(getButtonOnClickListener());
+        Button scanbar= (Button)view.findViewById(R.id.goscanbarcode);
+        scanbar.setOnClickListener(getButtonOnClickListener());
+        Button scanqr= (Button)view.findViewById(R.id.goscanqrcode);
+        scanqr.setOnClickListener(getButtonOnClickListener());
         return view;
     }
 
@@ -87,18 +88,31 @@ public class ScanCodePage extends Fragment {
     }
 
     public void scanCode(View v){
-        SendRecipePage fragment = new SendRecipePage();
-        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-        i.replace(R.id.sendrecipepage, fragment).addToBackStack(null);
-        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        i.commit();
-//        try {
-//            Intent intent = new Intent(ACTION_SCAN);
-//            intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
-//            startActivityForResult(intent, 0);
-//        }catch (ActivityNotFoundException e){
-////            showDialog(getActivity(), "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
-//        }
+//        SendRecipePage fragment = new SendRecipePage();
+//        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+//        i.replace(R.id.sendrecipepage, fragment).addToBackStack(null);
+//        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//        i.commit();
+        switch (v.getId()){
+            case R.id.goscanbarcode:
+                try {
+                    Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+                    intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
+                    startActivityForResult(intent, 0);
+                }catch (ActivityNotFoundException e){
+                    showDialog((AppCompatActivity) getActivity(), "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
+                }
+                break;
+            case R.id.goscanqrcode:
+                try {
+                    Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+                    intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+                    startActivityForResult(intent, 0);
+                }catch (ActivityNotFoundException e){
+                    showDialog((AppCompatActivity) getActivity(), "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
+                }
+                break;
+        }
     }
 
     private static AlertDialog showDialog(final AppCompatActivity act, CharSequence title,
@@ -122,7 +136,7 @@ public class ScanCodePage extends Fragment {
         return downloadDialog.show();
     }
 
-//    @Override
+    //    @Override
 //    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 //        if(requestCode == 0) {
 //            if(resultCode == RESULT_OK) {
