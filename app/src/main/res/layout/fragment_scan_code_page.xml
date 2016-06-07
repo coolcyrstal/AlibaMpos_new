@@ -3,15 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.chayenjr.alibampos.ScanCodePage"
-    android:id="@+id/scancodepage">
+    android:id="@+id/scancodepage"
+    android:background="#ffffff">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:id="@+id/imageView2"
-        android:layout_gravity="center"
-        android:src="@drawable/testscan"
-        android:scaleType="fitXY" />
+        android:layout_gravity="center|top"
+        android:src="@drawable/scanqr_bar_code_icon"
+        android:scaleType="fitXY"
+        android:layout_marginTop="100dp"/>
 
     <FrameLayout
         android:layout_width="match_parent"

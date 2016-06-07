@@ -59,8 +59,8 @@ public class LoginPage extends AppCompatActivity{
         setContentView(R.layout.activity_login_page);
 
         findViewById(R.id.textView).setVisibility(View.INVISIBLE);
-        findViewById(R.id.textUsername).setVisibility(View.INVISIBLE);
-        findViewById(R.id.textPassword).setVisibility(View.INVISIBLE);
+        findViewById(R.id.username).setVisibility(View.INVISIBLE);
+        findViewById(R.id.password).setVisibility(View.INVISIBLE);
         findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
 
         SplashScreen fragment = new SplashScreen();
@@ -76,8 +76,8 @@ public class LoginPage extends AppCompatActivity{
                 // Do something after 3s = 3000ms
                 getSupportFragmentManager().popBackStack();
                 findViewById(R.id.textView).setVisibility(View.VISIBLE);
-                findViewById(R.id.textUsername).setVisibility(View.VISIBLE);
-                findViewById(R.id.textPassword).setVisibility(View.VISIBLE);
+                findViewById(R.id.username).setVisibility(View.VISIBLE);
+                findViewById(R.id.password).setVisibility(View.VISIBLE);
                 findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
             }
         }, 3000);
