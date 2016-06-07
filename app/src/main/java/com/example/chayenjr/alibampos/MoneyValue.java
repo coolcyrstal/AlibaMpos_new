@@ -32,7 +32,7 @@ public class MoneyValue extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private String paymentmoney = "";
+    public static String paymentmoney = "";
     private PlusOneButton mPlusOneButton;
 
     private OnFragmentInteractionListener mListener;
@@ -160,6 +160,7 @@ public class MoneyValue extends Fragment {
             default:break;
         }
         moneypay.setText(paymentmoney);
+        double moneypayint = Double.parseDouble(paymentmoney);
     }
 //   
     public interface OnFragmentInteractionListener {

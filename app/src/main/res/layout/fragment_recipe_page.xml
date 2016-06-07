@@ -13,5 +13,38 @@
         android:src="@drawable/testrecipe"
         android:scaleType="fitXY" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="e-Receipt for amount THB"
+        android:textSize="20dp"
+        android:id="@+id/textView"
+        android:textStyle="bold"
+        android:textColor="#33b5e5"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginRight="30dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:textSize="20dp"
+        android:id="@+id/paymoney"
+        android:textStyle="bold"
+        android:textColor="#33b5e5"
+        android:layout_gravity="right|center"
+        android:layout_marginRight="60dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="has been sent"
+        android:textSize="20dp"
+        android:id="@+id/textView2"
+        android:textStyle="bold"
+        android:textColor="#33b5e5"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="30dp"/>
 
 </FrameLayout>
