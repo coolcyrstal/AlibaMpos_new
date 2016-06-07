@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 
 /**
@@ -88,11 +90,8 @@ public class ScanCodePage extends Fragment {
     }
 
     public void scanCode(View v){
-//        SendRecipePage fragment = new SendRecipePage();
-//        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-//        i.replace(R.id.sendrecipepage, fragment).addToBackStack(null);
-//        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-//        i.commit();
+        SendRecipePage fragment = new SendRecipePage();
+        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
         switch (v.getId()){
             case R.id.goscanbarcode:
                 try {
@@ -102,6 +101,11 @@ public class ScanCodePage extends Fragment {
                 }catch (ActivityNotFoundException e){
                     showDialog((AppCompatActivity) getActivity(), "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
                 }
+                getActivity().findViewById(R.id.goscanbarcode).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.goscanqrcode).setVisibility(View.INVISIBLE);
+                i.replace(R.id.sendrecipepage, fragment).addToBackStack(null);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                i.commit();
                 break;
             case R.id.goscanqrcode:
                 try {
@@ -111,6 +115,11 @@ public class ScanCodePage extends Fragment {
                 }catch (ActivityNotFoundException e){
                     showDialog((AppCompatActivity) getActivity(), "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
                 }
+                getActivity().findViewById(R.id.goscanbarcode).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.goscanqrcode).setVisibility(View.INVISIBLE);
+                i.replace(R.id.sendrecipepage, fragment).addToBackStack(null);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                i.commit();
                 break;
         }
     }
@@ -136,18 +145,16 @@ public class ScanCodePage extends Fragment {
         return downloadDialog.show();
     }
 
-    //    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
-//        if(requestCode == 0) {
-//            if(resultCode == RESULT_OK) {
-//                String contents = intent.getStringExtra("SCAN_RESULT");
-//                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-//                Toast.makeText(this,
-//                        "Content:" + contents + " Format:" + format,
-//                        Toast.LENGTH_LONG).show();
-//            }
-//        }
-//    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if(requestCode == 0) {
+            if(resultCode == getActivity().RESULT_OK) {
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+                Toast.makeText(getActivity(), "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

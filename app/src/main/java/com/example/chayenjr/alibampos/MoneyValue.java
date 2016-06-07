@@ -117,6 +117,7 @@ public class MoneyValue extends Fragment {
                 paymentmoney = "";
                 break;
             case R.id.pay:
+                getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
                 ScanCodePage fragment = new ScanCodePage();
                 FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
                 i.replace(R.id.scancodepage, fragment).addToBackStack(null);
