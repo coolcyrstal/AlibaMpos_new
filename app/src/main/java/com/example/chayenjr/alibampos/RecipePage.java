@@ -3,9 +3,11 @@ package com.example.chayenjr.alibampos;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -68,7 +70,26 @@ public class RecipePage extends Fragment {
         TextView moneypay = (TextView)view.findViewById(R.id.paymoney);
         String showvalue = MoneyValue.showreceipt;
         moneypay.setText("e-Receipt for amount THB" + showvalue);
+        Button homebutton= (Button)view.findViewById(R.id.homebutton);
+        homebutton.setOnClickListener(getButtonOnClickListener());
         return view;
+    }
+
+    private View.OnClickListener getButtonOnClickListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonOnClickGoHome(v);
+            }
+        };
+    }
+
+    public void buttonOnClickGoHome(View v){
+        StartPayment fragment = new StartPayment();
+        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+        i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
+        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        i.commit();
     }
 
     // TODO: Rename method, update argument and hook method into UI event

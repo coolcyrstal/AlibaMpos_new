@@ -36,4 +36,20 @@
         android:layout_gravity="center_horizontal|center"
         android:layout_marginTop="30dp"/>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/scancodepage"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id = "@+id/homebutton"
+            android:background="@drawable/homebutton"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp" />
+    </FrameLayout>
+
 </FrameLayout>
