@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -86,13 +87,18 @@ public class ScanCodePage extends Fragment {
     }
 
     public void scanCode(View v){
-        try {
-            Intent intent = new Intent(ACTION_SCAN);
-            intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
-            startActivityForResult(intent, 0);
-        }catch (ActivityNotFoundException e){
-//            showDialog(getActivity(), "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
-        }
+        SendRecipePage fragment = new SendRecipePage();
+        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+        i.replace(R.id.sendrecipepage, fragment).addToBackStack(null);
+        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        i.commit();
+//        try {
+//            Intent intent = new Intent(ACTION_SCAN);
+//            intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
+//            startActivityForResult(intent, 0);
+//        }catch (ActivityNotFoundException e){
+////            showDialog(getActivity(), "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
+//        }
     }
 
     private static AlertDialog showDialog(final AppCompatActivity act, CharSequence title,

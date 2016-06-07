@@ -3,22 +3,20 @@ package com.example.chayenjr.alibampos;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link SendRecipePage.OnFragmentInteractionListener} interface
+ * {@link RecipePage.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link SendRecipePage#newInstance} factory method to
+ * Use the {@link RecipePage#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SendRecipePage extends Fragment {
+public class RecipePage extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +28,7 @@ public class SendRecipePage extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public SendRecipePage() {
+    public RecipePage() {
         // Required empty public constructor
     }
 
@@ -40,11 +38,11 @@ public class SendRecipePage extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SendRecipePage.
+     * @return A new instance of fragment RecipePage.
      */
     // TODO: Rename and change types and number of parameters
-    public static SendRecipePage newInstance(String param1, String param2) {
-        SendRecipePage fragment = new SendRecipePage();
+    public static RecipePage newInstance(String param1, String param2) {
+        RecipePage fragment = new RecipePage();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,29 +62,10 @@ public class SendRecipePage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_send_recipe_page, container, false);
         // Inflate the layout for this fragment
-        Button scan= (Button)view.findViewById(R.id.sendrecipebutton);
-        scan.setOnClickListener(getButtonOnClickListener());
-        return view;
+        return inflater.inflate(R.layout.fragment_recipe_page, container, false);
     }
 
-    private View.OnClickListener getButtonOnClickListener() {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendrecipe(v);
-            }
-        };
-    }
-
-    public void sendrecipe(View v){
-        RecipePage fragment = new RecipePage();
-        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-        i.replace(R.id.recipepage, fragment).addToBackStack(null);
-        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        i.commit();
-    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -110,17 +89,17 @@ public class SendRecipePage extends Fragment {
 //        super.onDetach();
 //        mListener = null;
 //    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+//
+//    /**
+//     * This interface must be implemented by activities that contain this
+//     * fragment to allow an interaction in this fragment to be communicated
+//     * to the activity and potentially other fragments contained in that
+//     * activity.
+//     * <p/>
+//     * See the Android Training lesson <a href=
+//     * "http://developer.android.com/training/basics/fragments/communicating.html"
+//     * >Communicating with Other Fragments</a> for more information.
+//     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

@@ -13,4 +13,23 @@
         android:src="@drawable/testsendrecipe"
         android:scaleType="fitXY" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/recipepage"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:id = "@+id/sendrecipebutton"
+            android:text="Send Recipe"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginTop="60dp"
+            android:background="@android:color/holo_blue_bright"/>
+    </FrameLayout>
 </FrameLayout>
