@@ -22,40 +22,69 @@
         android:id="@+id/textView"
         android:textStyle="bold"
         android:textColor="#33b5e5"
-        android:layout_gravity="center_horizontal|top" />
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginTop="50dp"/>
 
-    <EditText
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:id="@+id/textUsername"
-        android:hint="Enter Username"
-        android:focusable="true"
-        android:layout_below="@+id/textView"
-        android:textColorHighlight="#ff7eff15"
-        android:textColorHint="#ffff25e6"
-        android:layout_marginTop="150dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_gravity="center"
+        android:id="@+id/username">
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textUsername"
+            android:hint="Enter Username"
+            android:focusable="true"
+            android:textColorHighlight="#ff7eff15"
+            android:textColorHint="#ffff25e6"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:id="@+id/imageView"
+            android:layout_marginBottom="0dp"
+            android:layout_gravity="center"
+            android:src="@drawable/user_icon" />
+    </RelativeLayout>
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-    <EditText
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/textPassword"
-        android:layout_below="@+id/textUsername"
-        android:layout_marginTop="200dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/textUsername"
-        android:layout_alignEnd="@+id/textUsername"
-        android:textColorHint="#ffff299f"
-        android:hint="Password"
-        android:layout_gravity="left|top" />
+        android:layout_gravity="center"
+        android:id="@+id/password">
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/textPassword"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColorHint="#ffff299f"
+            android:hint="Password" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:adjustViewBounds="true"
+            android:id="@+id/imageView2"
+            android:layout_marginBottom="0dp"
+            android:layout_gravity="center"
+            android:src="@drawable/password_icon" />
+    </RelativeLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -68,12 +97,13 @@
             android:id="@+id/fullscreen_content_controls"
             style="?metaButtonBarStyle"
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginTop="50dp"
             android:background="@color/black_overlay"
             android:orientation="horizontal"
-            tools:ignore="UselessParent">
+            tools:ignore="UselessParent"
+            android:layout_marginBottom="100dp">
 
             <Button
                 android:id="@+id/signin_button"

@@ -129,7 +129,7 @@ public class MoneyValue extends Fragment {
                     i.replace(R.id.scancodepage, fragment).addToBackStack(null);
                     i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                     i.commit();
-                    showreceipt = paymentmoney + "." + paymentmoneydot;
+                    showreceipt = paymentmoney + ".00";
                     break;
                 case R.id.one:
                     paymentmoney += "1";
@@ -250,7 +250,7 @@ public class MoneyValue extends Fragment {
                         i.replace(R.id.scancodepage, fragment).addToBackStack(null);
                         i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                         i.commit();
-                        showreceipt = paymentmoney + "." + paymentmoneydot;
+                        showreceipt = paymentmoney + ".00";
                         break;
                     case R.id.one:paymentmoneydot += "1";break;
                     case R.id.two:paymentmoneydot += "2";break;

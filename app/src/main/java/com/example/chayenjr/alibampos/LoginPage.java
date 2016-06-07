@@ -109,16 +109,16 @@ public class LoginPage extends AppCompatActivity{
 //                i.add(R.id.startpaymentPage, fragment);
                 i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                findViewById(R.id.textUsername).setVisibility(View.INVISIBLE);
-                findViewById(R.id.textPassword).setVisibility(View.INVISIBLE);
+                findViewById(R.id.username).setVisibility(View.INVISIBLE);
+                findViewById(R.id.password).setVisibility(View.INVISIBLE);
 //                i.commit();
                 button.setText("Sign out");
             } else{
                 check_login = 0;
 //                i.remove(fragment);
                 findViewById(R.id.textView).setVisibility(View.VISIBLE);
-                findViewById(R.id.textUsername).setVisibility(View.VISIBLE);
-                findViewById(R.id.textPassword).setVisibility(View.VISIBLE);
+                findViewById(R.id.username).setVisibility(View.VISIBLE);
+                findViewById(R.id.password).setVisibility(View.VISIBLE);
                 getSupportFragmentManager().popBackStack();
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
 //                i.commit();

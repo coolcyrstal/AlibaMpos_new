@@ -7,13 +7,13 @@
     android:id="@+id/startpaymentPage">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:adjustViewBounds="true"
         android:id="@+id/imageView"
-        android:scaleType="fitXY"
-        android:layout_gravity="center"
-        android:src="@drawable/home" />
+        android:layout_gravity="center|top"
+        android:src="@drawable/logo"
+        android:layout_marginTop="100dp"/>
 
     <FrameLayout
         android:layout_width="match_parent"

@@ -3,15 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.chayenjr.alibampos.RecipePage"
-    android:id="@+id/recipepage">
+    android:id="@+id/recipepage"
+    android:background="#ffffff">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/imageView2"
-        android:layout_gravity="center"
-        android:src="@drawable/testrecipe"
-        android:scaleType="fitXY" />
+        android:layout_gravity="center|top"
+        android:src="@drawable/logo"
+        android:layout_marginTop="50dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,7 +50,7 @@
             android:id = "@+id/homebutton"
             android:background="@drawable/homebutton"
             android:layout_gravity="center"
-            android:layout_marginTop="70dp" />
+            android:layout_marginTop="80dp" />
     </FrameLayout>
 
 </FrameLayout>
