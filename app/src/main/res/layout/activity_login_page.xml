@@ -93,30 +93,18 @@
         android:id="@+id/startpaymentPage"
         android:layout_gravity="left|center_vertical">
 
-        <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
-            style="?metaButtonBarStyle"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_gravity="bottom|center_horizontal"
-            android:layout_marginTop="50dp"
-            android:background="@color/black_overlay"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent"
-            android:layout_marginBottom="100dp">
-
-            <Button
-                android:id="@+id/signin_button"
-                style="?metaButtonBarButtonStyle"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Sign in"
-                android:nestedScrollingEnabled="false"
-                android:onClick="buttonOnClick" />
-        </LinearLayout>
-
-
+        <Button
+            android:id="@+id/signin_button"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sign in"
+            android:nestedScrollingEnabled="false"
+            android:onClick="buttonOnClick"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_gravity="center|bottom"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="100dp"/>
     </FrameLayout>
 
 </FrameLayout>
