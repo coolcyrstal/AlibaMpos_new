@@ -37,5 +37,48 @@
 
     </FrameLayout>
 
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/history"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="80dp"
+        android:layout_marginRight="100dp"
+        android:background="@drawable/icon_history"
+        android:onClick="buttonOnClick"
+        android:clickable="true" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/settings"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="80dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/icon_setting"
+        android:onClick="buttonOnClick"
+        android:clickable="true" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/support"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/icon_support"
+        android:onClick="buttonOnClick"
+        android:clickable="true" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/information"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="80dp"
+        android:layout_marginLeft="110dp"
+        android:background="@drawable/icon_information"
+        android:onClick="buttonOnClick"
+        android:clickable="true" />
 
 </FrameLayout>
