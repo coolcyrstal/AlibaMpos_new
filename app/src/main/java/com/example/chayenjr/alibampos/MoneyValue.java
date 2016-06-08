@@ -115,7 +115,7 @@ public class MoneyValue extends Fragment {
         EditText moneydot = (EditText) getActivity().findViewById(R.id.textmoneydot);
         paymentmoneydot = moneydot.getText().toString();
         if(checkdot == 1){
-            if(money.length() >= 8){
+            if(money.length() >= 6){
                 switch (v.getId()){
                     case R.id.del:
                         money = money.toString().substring(0, money.length()-1);

@@ -2,6 +2,7 @@ package com.example.chayenjr.alibampos;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
@@ -28,6 +29,8 @@ public class LoginPage extends AppCompatActivity{
     private final Handler mHideHandler = new Handler();
     private View mContentView;
     private EditText username, password;
+    private int newpoint_x = 650, newpoint_y = 20;
+    private int point_x = 500,point_y = 1200;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -82,6 +85,11 @@ public class LoginPage extends AppCompatActivity{
                 findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
             }
         }, 3000);
+
+        Button butt = (Button)findViewById(R.id.signin_button);
+        Point point = getPointOfView(butt);
+        point_x = point.x;
+        point_y = point.y;
     }
 
     public void buttonOnClick(View v){
@@ -95,10 +103,6 @@ public class LoginPage extends AppCompatActivity{
         FragmentTransaction i = getSupportFragmentManager().beginTransaction();
 
         Button button = (Button)findViewById(R.id.signin_button);
-//        AbsoluteLayout.LayoutParams absParams = (AbsoluteLayout.LayoutParams)button.getLayoutParams();
-//        absParams.x = myNewX;
-//        absParams.y = myNewY;
-//        button.setLayoutParams(absParams);
 
         if(check_login == 0 && username.getText().toString().equals("") && password.getText().toString().equals("")){
             //wrong password
@@ -117,6 +121,8 @@ public class LoginPage extends AppCompatActivity{
                 findViewById(R.id.username).setVisibility(View.INVISIBLE);
                 findViewById(R.id.password).setVisibility(View.INVISIBLE);
 //                i.commit();
+                button.setX(newpoint_x);
+                button.setY(newpoint_y);
                 button.setText("Logout");
             } else{
                 check_login = 0;
@@ -128,6 +134,8 @@ public class LoginPage extends AppCompatActivity{
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
 //                i.commit();
 //                myText.setText("You're logout");
+                button.setX(350);
+                button.setY(1100);
                 button.setText("Submit");
             }
             lView.addView(myText);
@@ -144,5 +152,11 @@ public class LoginPage extends AppCompatActivity{
             }
         });
         return downloadDialog.show();
+    }
+
+    private static Point getPointOfView(View view) {
+        int[] location = new int[2];
+        view.getLocationOnScreen(location);
+        return new Point(location[0], location[1]);
     }
 }
