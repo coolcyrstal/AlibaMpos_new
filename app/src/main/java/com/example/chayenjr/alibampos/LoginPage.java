@@ -95,6 +95,10 @@ public class LoginPage extends AppCompatActivity{
         FragmentTransaction i = getSupportFragmentManager().beginTransaction();
 
         Button button = (Button)findViewById(R.id.signin_button);
+//        AbsoluteLayout.LayoutParams absParams = (AbsoluteLayout.LayoutParams)button.getLayoutParams();
+//        absParams.x = myNewX;
+//        absParams.y = myNewY;
+//        button.setLayoutParams(absParams);
 
         if(check_login == 0 && username.getText().toString().equals("") && password.getText().toString().equals("")){
             //wrong password
@@ -113,7 +117,7 @@ public class LoginPage extends AppCompatActivity{
                 findViewById(R.id.username).setVisibility(View.INVISIBLE);
                 findViewById(R.id.password).setVisibility(View.INVISIBLE);
 //                i.commit();
-                button.setText("Sign out");
+                button.setText("Logout");
             } else{
                 check_login = 0;
 //                i.remove(fragment);
@@ -124,7 +128,7 @@ public class LoginPage extends AppCompatActivity{
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
 //                i.commit();
 //                myText.setText("You're logout");
-                button.setText("Sign in");
+                button.setText("Submit");
             }
             lView.addView(myText);
             i.commit();
