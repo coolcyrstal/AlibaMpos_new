@@ -70,6 +70,7 @@ public class StartPayment extends Fragment {
         i.replace(R.id.moneypay, fragment).addToBackStack(null);
         i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         i.commit();
+        getActivity().findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
     }
 
     public void removeView(){

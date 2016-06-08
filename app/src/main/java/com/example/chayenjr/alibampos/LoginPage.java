@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -119,7 +120,7 @@ public class LoginPage extends AppCompatActivity{
                 findViewById(R.id.textView).setVisibility(View.VISIBLE);
                 findViewById(R.id.username).setVisibility(View.VISIBLE);
                 findViewById(R.id.password).setVisibility(View.VISIBLE);
-                getSupportFragmentManager().popBackStack();
+                getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
 //                i.commit();
 //                myText.setText("You're logout");

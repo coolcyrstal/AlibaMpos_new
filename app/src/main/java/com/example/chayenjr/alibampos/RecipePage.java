@@ -90,6 +90,7 @@ public class RecipePage extends Fragment {
         i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
         i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         i.commit();
+        getActivity().findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
