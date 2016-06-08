@@ -180,7 +180,7 @@ public class MoneyValue extends Fragment {
                 }
             }
         } else{
-            if(moneydot.length() == 2){
+            if(money.length() == 2){
                 switch (v.getId()){
                     case R.id.del:
                         money = money.toString().substring(0, money.length()-1);
@@ -212,9 +212,9 @@ public class MoneyValue extends Fragment {
             } else{
                 switch (v.getId()){
                     case R.id.del:
-                        if(moneydot.length() <= 0){}
+                        if(money.length() <= 0){}
                         else{
-                            money = money.toString().substring(0, money.length()-1);
+                            money = "";
                         }
                         break;
                     case R.id.ac:money = "";break;
@@ -237,13 +237,18 @@ public class MoneyValue extends Fragment {
                     case R.id.seven:money += "7";break;
                     case R.id.eight:money += "8";break;
                     case R.id.nine:money += "9";break;
-                    case R.id.zero:money += "0";break;
+                    case R.id.zero:
+                        if(money == ""){}
+                        else{money += "0";}break;
                     case R.id.zerozero:
-                        money += "00";
-                        if(moneydot.length() == 1){
-                            checkdot = 1;
+                        if(money == ""){}
+                        else{
+                            money += "00";
+                            if(moneydot.length() == 1){
+                                checkdot = 1;
+                            }
                         }
-                        else{}break;
+                        break;
                     default:break;
                 }
             }
