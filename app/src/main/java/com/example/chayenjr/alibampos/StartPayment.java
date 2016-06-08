@@ -65,6 +65,10 @@ public class StartPayment extends Fragment {
 
     public void buttonOnClickGoPayment(){
         getActivity().findViewById(R.id.startpaymentbutton).setVisibility(View.INVISIBLE);
+        getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
+        getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
+        getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
+        getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
         MoneyValue fragment = new MoneyValue();
         FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
         i.replace(R.id.moneypay, fragment).addToBackStack(null);
