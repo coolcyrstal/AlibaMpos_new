@@ -59,7 +59,7 @@ public class LoginPage extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        findViewById(R.id.textView).setVisibility(View.INVISIBLE);
+        findViewById(R.id.logo).setVisibility(View.INVISIBLE);
         findViewById(R.id.username).setVisibility(View.INVISIBLE);
         findViewById(R.id.password).setVisibility(View.INVISIBLE);
         findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
@@ -76,7 +76,7 @@ public class LoginPage extends AppCompatActivity{
             public void run() {
                 // Do something after 3s = 3000ms
                 getSupportFragmentManager().popBackStack();
-                findViewById(R.id.textView).setVisibility(View.VISIBLE);
+                findViewById(R.id.logo).setVisibility(View.VISIBLE);
                 findViewById(R.id.username).setVisibility(View.VISIBLE);
                 findViewById(R.id.password).setVisibility(View.VISIBLE);
                 findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
@@ -106,7 +106,7 @@ public class LoginPage extends AppCompatActivity{
                 username.getText().clear();
                 password.getText().clear();
 //                myText.setText("You're login");
-                findViewById(R.id.textView).setVisibility(View.INVISIBLE);
+                findViewById(R.id.logo).setVisibility(View.INVISIBLE);
 //                i.add(R.id.startpaymentPage, fragment);
                 i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -117,7 +117,7 @@ public class LoginPage extends AppCompatActivity{
             } else{
                 check_login = 0;
 //                i.remove(fragment);
-                findViewById(R.id.textView).setVisibility(View.VISIBLE);
+                findViewById(R.id.logo).setVisibility(View.VISIBLE);
                 findViewById(R.id.username).setVisibility(View.VISIBLE);
                 findViewById(R.id.password).setVisibility(View.VISIBLE);
                 getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);

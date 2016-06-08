@@ -13,22 +13,20 @@
         android:id="@+id/splashscreenpage">
     </FrameLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="AlibaMpos"
-        android:textSize="50sp"
-        android:id="@+id/textView"
-        android:textStyle="bold"
-        android:textColor="#33b5e5"
-        android:layout_gravity="center_horizontal|top"
-        android:layout_marginTop="50dp"/>
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:adjustViewBounds="true"
+        android:id="@+id/logo"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/logo_psb" />
 
     <RelativeLayout
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="70dp"
         android:id="@+id/username">
         <EditText
             android:layout_width="150dp"
@@ -63,6 +61,7 @@
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="70dp"
         android:id="@+id/password">
         <EditText
             android:layout_width="150dp"

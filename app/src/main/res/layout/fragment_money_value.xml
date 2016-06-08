@@ -7,13 +7,15 @@
     android:background="#ffffff">
 
 
-    <!--<ImageView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/imageView2"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:src="@drawable/moneypay"-->
-        <!--android:scaleType="fitXY" />-->
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/logo"
+        android:layout_gravity="top"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/logo_psb"
+        android:scaleType="fitXY" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,9 +26,9 @@
         android:layout_below="@+id/textView"
         android:textColor="#AAAAAA"
         android:textSize="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         android:layout_gravity="left"
-        android:layout_marginLeft="40dp"/>
+        android:layout_marginLeft="100dp"/>
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,31 +97,22 @@
             android:layout_height="match_parent"
             android:orientation="horizontal" >
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/one"
-                android:text="1"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border"/>
+                android:background="@drawable/btn_1"/>
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/two"
-                android:text="2"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border"/>
+                android:background="@drawable/btn_2"/>
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/three"
-                android:text="3"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border" />
+                android:background="@drawable/btn_3" />
         </LinearLayout>
 
         <LinearLayout 
@@ -127,31 +120,22 @@
             android:layout_height="match_parent"
             android:orientation="horizontal" >
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/four"
-                android:text="4"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border" />
+                android:background="@drawable/btn_4" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/five"
-                android:text="5"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border" />
+                android:background="@drawable/btn_5" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/six"
-                android:text="6"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border" />
+                android:background="@drawable/btn_6" />
         </LinearLayout>
 
         <LinearLayout 
@@ -159,59 +143,44 @@
             android:layout_height="match_parent"
             android:orientation="horizontal" >
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/seven"
-                android:text="7"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border" />
+                android:background="@drawable/btn_7" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/eight"
-                android:text="8"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border" />
+                android:background="@drawable/btn_8" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/nine"
-                android:text="9"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border" />
+                android:background="@drawable/btn_9" />
         </LinearLayout>
 
         <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal" >
+
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:id = "@+id/zerozero"
+                android:background="@drawable/btn_00" />
+
+            <Button
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/zero"
-                android:layout_weight="2"
-                android:text="0"
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border" />
+                android:background="@drawable/btn_0" />
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id = "@+id/dot"
-                android:text="."
-                android:textSize="25dp"
-                android:textColor="@android:color/holo_blue_light"
-                android:background="@drawable/button_money_border" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
                 android:id = "@+id/ac"
                 android:layout_weight="2"
                 android:text="ac"
@@ -237,7 +206,7 @@
             android:textColor="#ffffff"
             android:layout_gravity="center|bottom"
             android:layout_marginBottom="50dp"
-            android:background="@drawable/button_border"/>
+            android:background="@drawable/btn_start"/>
 
     </FrameLayout>
 </FrameLayout>

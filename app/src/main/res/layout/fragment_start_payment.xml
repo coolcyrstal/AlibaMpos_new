@@ -7,12 +7,12 @@
     android:id="@+id/startpaymentPage">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:adjustViewBounds="true"
         android:id="@+id/imageView"
         android:layout_gravity="center|top"
-        android:src="@drawable/logo"
+        android:src="@drawable/logo_psb"
         android:layout_marginTop="100dp"/>
 
     <FrameLayout
