@@ -25,13 +25,13 @@
         <Button
             android:layout_width="260dp"
             android:layout_height="30dp"
-            android:text="Start Payment"
+            android:text="Start Accepting Payment"
             android:id="@+id/startpaymentbutton"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
             android:layout_marginTop="70dp"
-            android:background="@android:color/holo_blue_bright"
+            android:background="@drawable/btn_start"
             android:onClick="buttonOnClick"
             android:clickable="true" />
 
