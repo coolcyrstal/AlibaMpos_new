@@ -34,7 +34,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:id="@+id/textUsername"
-            android:hint="Enter Username"
+            android:hint="User ID"
             android:focusable="true"
             android:textColorHighlight="#ff7eff15"
             android:textColorHint="#ffff25e6"
@@ -75,7 +75,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColorHint="#ffff299f"
-            android:hint="Password" />
+            android:hint="User PIN" />
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -96,12 +96,12 @@
         <Button
             android:id="@+id/signin_button"
             android:layout_width="130dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_weight="1"
             android:text="Sign in"
             android:nestedScrollingEnabled="false"
             android:onClick="buttonOnClick"
-            android:background="@android:color/holo_blue_bright"
+            android:background="@drawable/BtnStart"
             android:layout_gravity="center|bottom"
             android:textColor="#ffffff"
             android:layout_marginBottom="100dp"/>

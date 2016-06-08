@@ -31,6 +31,6 @@
             android:textColor="#ffffff"
             android:layout_gravity="center|center_horizontal"
             android:layout_marginTop="60dp"
-            android:background="@android:color/holo_blue_bright"/>
+            android:background="@drawable/button_border"/>
     </FrameLayout>
 </FrameLayout>
