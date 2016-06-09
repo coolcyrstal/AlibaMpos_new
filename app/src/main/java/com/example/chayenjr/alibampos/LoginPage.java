@@ -30,7 +30,7 @@ public class LoginPage extends AppCompatActivity{
     private View mContentView;
     private EditText username, password;
     private int newpoint_x = 650, newpoint_y = 20;
-    private int point_x = 500,point_y = 1200;
+    private int point_x = 0,point_y = 0;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -83,13 +83,12 @@ public class LoginPage extends AppCompatActivity{
                 findViewById(R.id.username).setVisibility(View.VISIBLE);
                 findViewById(R.id.password).setVisibility(View.VISIBLE);
                 findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
+                Button butt = (Button)findViewById(R.id.signin_button);
+                Point point = getPointOfView(butt);
+                point_x = point.x;
+                point_y = point.y;
             }
         }, 3000);
-
-        Button butt = (Button)findViewById(R.id.signin_button);
-        Point point = getPointOfView(butt);
-        point_x = point.x;
-        point_y = point.y;
     }
 
     public void buttonOnClick(View v){
@@ -103,6 +102,7 @@ public class LoginPage extends AppCompatActivity{
         FragmentTransaction i = getSupportFragmentManager().beginTransaction();
 
         Button button = (Button)findViewById(R.id.signin_button);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) button.getLayoutParams();
 
         if(check_login == 0 && username.getText().toString().equals("") && password.getText().toString().equals("")){
             //wrong password
@@ -134,8 +134,8 @@ public class LoginPage extends AppCompatActivity{
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
 //                i.commit();
 //                myText.setText("You're logout");
-                button.setX(350);
-                button.setY(1100);
+                button.setX(point_x);
+                button.setY(point_y);
                 button.setText("Submit");
             }
             lView.addView(myText);
