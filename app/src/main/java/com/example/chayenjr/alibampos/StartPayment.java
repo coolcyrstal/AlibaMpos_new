@@ -75,7 +75,7 @@ public class StartPayment extends Fragment {
         i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         i.commit();
         getActivity().setTitle("AlibaMpos");
-//        getActivity().findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
+        getActivity().findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
     }
 
     public void removeView(){
