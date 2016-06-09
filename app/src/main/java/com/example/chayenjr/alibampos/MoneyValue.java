@@ -145,10 +145,6 @@ public class MoneyValue extends Fragment {
                     default:break;
                 }
             } else {
-                if(money.length() >= 6){
-                    moneydot.setTextSize(20);
-                    moneypay.setTextSize(20);
-                }
                 switch (v.getId()){
                     case R.id.del:
                         if(money.length() == 3){
@@ -256,6 +252,16 @@ public class MoneyValue extends Fragment {
                     default:break;
                 }
             }
+        }
+        if(money.length() > 8){
+            moneydot.setTextSize(15);
+            moneypay.setTextSize(15);
+        }else if(money.length() > 6) {
+            moneydot.setTextSize(20);
+            moneypay.setTextSize(20);
+        }else{
+            moneydot.setTextSize(30);
+            moneypay.setTextSize(30);
         }
         if(money.length() <= 2){
             moneypay.setText("");
