@@ -122,13 +122,7 @@ public class MoneyValue extends Fragment {
                         break;
                     case R.id.ac:money = "";checkdot = 0;break;
                     case R.id.pay:
-                        getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
-                        getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
-                        ScanCodePage fragment = new ScanCodePage();
-                        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-                        i.replace(R.id.scancodepage, fragment).addToBackStack(null);
-                        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                        i.commit();
+                        goScanCodePage();
                         showreceipt = paymentmoney + "." + paymentmoneydot;
                         break;
                     case R.id.one:break;
@@ -156,13 +150,7 @@ public class MoneyValue extends Fragment {
                         break;
                     case R.id.ac:money = "";checkdot = 0;break;
                     case R.id.pay:
-                        getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
-                        getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
-                        ScanCodePage fragment = new ScanCodePage();
-                        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-                        i.replace(R.id.scancodepage, fragment).addToBackStack(null);
-                        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                        i.commit();
+                        goScanCodePage();
                         showreceipt = paymentmoney + "." + paymentmoneydot;
                         break;
                     case R.id.one:money += "1";break;
@@ -187,13 +175,7 @@ public class MoneyValue extends Fragment {
                         break;
                     case R.id.ac:money = "";break;
                     case R.id.pay:
-                        getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
-                        getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
-                        ScanCodePage fragment = new ScanCodePage();
-                        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-                        i.replace(R.id.scancodepage, fragment).addToBackStack(null);
-                        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                        i.commit();
+                        goScanCodePage();
                         showreceipt = paymentmoney + "." + paymentmoneydot;
                         break;
                     case R.id.one:money += "1";checkdot = 1;break;
@@ -219,13 +201,7 @@ public class MoneyValue extends Fragment {
                         break;
                     case R.id.ac:money = "";break;
                     case R.id.pay:
-                        getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
-                        getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
-                        ScanCodePage fragment = new ScanCodePage();
-                        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-                        i.replace(R.id.scancodepage, fragment).addToBackStack(null);
-                        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                        i.commit();
+                        goScanCodePage();
                         showreceipt = paymentmoney + "." + paymentmoneydot;
                         break;
                     case R.id.one:money += "1";break;
@@ -278,4 +254,13 @@ public class MoneyValue extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
+    private void goScanCodePage(){
+        getActivity().findViewById(R.id.pay).setVisibility(View.INVISIBLE);
+        getActivity().findViewById(R.id.del).setVisibility(View.INVISIBLE);
+        ScanCodePage fragment = new ScanCodePage();
+        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+        i.replace(R.id.scancodepage, fragment).addToBackStack(null);
+        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        i.commit();
+    }
 }

@@ -29,8 +29,8 @@ public class LoginPage extends AppCompatActivity{
     private final Handler mHideHandler = new Handler();
     private View mContentView;
     private EditText username, password;
-    private int newpoint_x = 650, newpoint_y = 20;
-    private int point_x = 0,point_y = 0;
+    public static int countPage = 0;
+    private int newpoint_x = 650, newpoint_y = 20, point_x = 0,point_y = 0;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override
@@ -112,6 +112,7 @@ public class LoginPage extends AppCompatActivity{
             //correct password
             if(check_login == 0){
                 check_login = 1;
+                countPage = 1;
                 username.getText().clear();
                 password.getText().clear();
 //                myText.setText("You're login");
@@ -128,6 +129,7 @@ public class LoginPage extends AppCompatActivity{
                 button.setText("Logout");
             } else{
                 check_login = 0;
+                countPage = 0;
 //                i.remove(fragment);
                 findViewById(R.id.logo).setVisibility(View.VISIBLE);
                 findViewById(R.id.username).setVisibility(View.VISIBLE);
@@ -165,7 +167,21 @@ public class LoginPage extends AppCompatActivity{
 
     @Override
     public void onBackPressed(){
-        quitProgramDialog(LoginPage.this, "Quit Program", "Are you sure to exit application", "Yes", "No");
+        if(countPage == 0){
+            quitProgramDialog(LoginPage.this, "Quit Program", "Are you sure to exit application", "Yes", "No");
+        } else if(countPage == 1){
+        } else if(countPage == 2){
+            StartPayment fragment = new StartPayment();
+            FragmentTransaction i = getSupportFragmentManager().beginTransaction();
+            findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
+            i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
+            i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            i.commit();
+            setTitle("AlibaMpos's shop");
+            countPage = 1;
+        } else if(countPage == 3){
+
+        }
     }
 
     private static AlertDialog quitProgramDialog(final AppCompatActivity act, CharSequence title,
@@ -175,6 +191,22 @@ public class LoginPage extends AppCompatActivity{
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 System.exit(0);
+            }
+        }).setNegativeButton(buttonNo, new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        return downloadDialog.show();
+    }
+
+    private static AlertDialog logoutDialog(final AppCompatActivity act, CharSequence title,
+                                                 CharSequence message, CharSequence buttonYes, CharSequence buttonNo){
+        AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
+        downloadDialog.setTitle(title).setMessage(message).setPositiveButton(buttonYes, new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
             }
         }).setNegativeButton(buttonNo, new DialogInterface.OnClickListener(){
             @Override
