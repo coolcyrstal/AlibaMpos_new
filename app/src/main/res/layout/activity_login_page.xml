@@ -31,20 +31,20 @@
         android:background="@drawable/button_money_border">
         <EditText
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:id="@+id/textUsername"
             android:hint="Merchant_ID"
             android:focusable="true"
             android:textColorHighlight="#ff7eff15"
             android:textColorHint="#ffff25e6"
-            android:layout_marginBottom="80dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
             android:layout_gravity="center"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            />
+            android:background="@android:color/transparent" />
 
         <ImageView
             android:layout_width="40dp"
@@ -67,16 +67,18 @@
         android:background="@drawable/button_money_border">
         <EditText
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/textPassword"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColorHint="#ffff299f"
-            android:hint="0812345678" />
+            android:hint="0812345678"
+            android:background="@android:color/transparent"/>
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
