@@ -79,6 +79,7 @@ public class LoginPage extends AppCompatActivity{
             public void run() {
                 // Do something after 3s = 3000ms
                 getSupportFragmentManager().popBackStack();
+                setTitle("Log In");
                 findViewById(R.id.logo).setVisibility(View.VISIBLE);
                 findViewById(R.id.username).setVisibility(View.VISIBLE);
                 findViewById(R.id.password).setVisibility(View.VISIBLE);
@@ -118,6 +119,7 @@ public class LoginPage extends AppCompatActivity{
 //                i.add(R.id.startpaymentPage, fragment);
                 i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                setTitle("AlibaMpos's shop");
                 findViewById(R.id.username).setVisibility(View.INVISIBLE);
                 findViewById(R.id.password).setVisibility(View.INVISIBLE);
 //                i.commit();
@@ -132,10 +134,11 @@ public class LoginPage extends AppCompatActivity{
                 findViewById(R.id.password).setVisibility(View.VISIBLE);
                 getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+                setTitle("Log In");
 //                i.commit();
 //                myText.setText("You're logout");
                 button.setX(point_x);
-                button.setY(point_y);
+                button.setY(point_y - 200);
                 button.setText("Submit");
             }
             lView.addView(myText);
