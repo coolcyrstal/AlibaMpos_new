@@ -1,0 +1,97 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chayenjr.alibampos.OtpCheckPage"
+    android:id="@+id/otpcheckPage"
+    android:background="#ffffff">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/logo"
+        android:layout_gravity="center|top"
+        android:src="@drawable/logo_psb"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Merchant_ID    : "
+        android:textSize="20dp"
+        android:id="@+id/m_id_text"
+        android:textStyle="bold"
+        android:textColor="#33b5e5"
+        android:layout_gravity="left|center"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="1234"
+        android:textSize="20dp"
+        android:id="@+id/m_id"
+        android:textColor="#33b5e5"
+        android:layout_gravity="center|center"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Phone Number :"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/tele_num_text"
+        android:textColor="#33b5e5"
+        android:layout_gravity="left|center"
+        android:layout_marginLeft="50dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0812345678"
+        android:textSize="20dp"
+        android:id="@+id/tele_num"
+        android:textColor="#33b5e5"
+        android:layout_gravity="center|center"
+        android:layout_marginLeft="70dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="OTP :"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:id="@+id/otp_text"
+        android:textColor="#33b5e5"
+        android:layout_gravity="left|center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:hint="0123"
+        android:textSize="20dp"
+        android:id="@+id/otp_num"
+        android:textColor="#33b5e5"
+        android:textColorHint="#33b5e5"
+        android:layout_gravity="left|center"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="40dp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/startpaymentPage"
+        android:layout_gravity="left|center_vertical">
+    </FrameLayout>
+</FrameLayout>

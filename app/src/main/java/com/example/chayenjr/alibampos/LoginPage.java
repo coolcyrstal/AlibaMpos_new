@@ -29,7 +29,8 @@ public class LoginPage extends AppCompatActivity{
     private final Handler mHideHandler = new Handler();
     private View mContentView;
     private EditText username, password;
-    public static int countPage = 0;
+    public static int countPage = -1;
+    public static String m_id = "", tele_num = "";
     private int newpoint_x = 650, newpoint_y = 20, point_x = 0,point_y = 0;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
@@ -105,32 +106,50 @@ public class LoginPage extends AppCompatActivity{
         Button button = (Button)findViewById(R.id.signin_button);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) button.getLayoutParams();
 
-        if(check_login == 0 && username.getText().toString().equals("") && password.getText().toString().equals("")){
+        if((check_login == 0 || check_login == 1) && username.getText().toString().equals("") && password.getText().toString().equals("")){
             //wrong password
-            showDialog(LoginPage.this, "Username or password incorrect", "Please type again", "OK");
+            showDialog(LoginPage.this, "Merchant_ID incorrect", "Please type again", "OK");
         } else {
             //correct password
             if(check_login == 0){
                 check_login = 1;
+                countPage = 0;
+                findViewById(R.id.logo).setVisibility(View.INVISIBLE);
+                findViewById(R.id.username).setVisibility(View.INVISIBLE);
+                findViewById(R.id.password).setVisibility(View.INVISIBLE);
+//                myText.setText("You're login");
+                OtpCheckPage fragment_otp = new OtpCheckPage();
+                FragmentTransaction a = getSupportFragmentManager().beginTransaction();
+                a.replace(R.id.otpcheckPage, fragment_otp).addToBackStack(null);
+                a.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                m_id = ((EditText) findViewById(R.id.textUsername)).getText().toString();
+                tele_num = ((EditText) findViewById(R.id.textPassword)).getText().toString();
+                setTitle("OTP Check");
+                a.commit();
+            } else if(check_login == 1){
+                check_login = 2;
                 countPage = 1;
                 username.getText().clear();
                 password.getText().clear();
-//                myText.setText("You're login");
                 findViewById(R.id.logo).setVisibility(View.INVISIBLE);
 //                i.add(R.id.startpaymentPage, fragment);
+                getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 setTitle("AlibaMpos's shop");
                 findViewById(R.id.username).setVisibility(View.INVISIBLE);
                 findViewById(R.id.password).setVisibility(View.INVISIBLE);
 //                i.commit();
+                lView.addView(myText);
+                i.commit();
                 button.setX(newpoint_x);
                 button.setY(newpoint_y);
                 button.setText("Logout");
             } else{
                 check_login = 0;
-                countPage = 0;
+                countPage = -1;
 //                i.remove(fragment);
+
                 findViewById(R.id.logo).setVisibility(View.VISIBLE);
                 findViewById(R.id.username).setVisibility(View.VISIBLE);
                 findViewById(R.id.password).setVisibility(View.VISIBLE);
@@ -142,9 +161,10 @@ public class LoginPage extends AppCompatActivity{
                 button.setX(point_x);
                 button.setY(point_y - 200);
                 button.setText("Submit");
+                lView.addView(myText);
+                i.commit();
             }
-            lView.addView(myText);
-            i.commit();
+
         }
     }
 
@@ -167,8 +187,15 @@ public class LoginPage extends AppCompatActivity{
 
     @Override
     public void onBackPressed(){
-        if(countPage == 0){
+        if(countPage == -1){
             quitProgramDialog(LoginPage.this, "Quit Program", "Are you sure to exit application", "Yes", "No");
+        } else if(countPage == 0){
+            findViewById(R.id.logo).setVisibility(View.VISIBLE);
+            findViewById(R.id.username).setVisibility(View.VISIBLE);
+            findViewById(R.id.password).setVisibility(View.VISIBLE);
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            countPage = -1;
+            check_login = 0;
         } else if(countPage == 1){
         } else if(countPage == 2){
             StartPayment fragment = new StartPayment();

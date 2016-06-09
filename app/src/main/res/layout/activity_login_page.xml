@@ -33,7 +33,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:id="@+id/textUsername"
-            android:hint="User ID"
+            android:hint="Merchant_ID"
             android:focusable="true"
             android:textColorHighlight="#ff7eff15"
             android:textColorHint="#ffff25e6"
@@ -76,7 +76,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColorHint="#ffff299f"
-            android:hint="User PIN" />
+            android:hint="0812345678" />
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -86,6 +86,14 @@
             android:layout_gravity="center"
             android:src="@drawable/icon_pin" />
     </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/otpcheckPage"
+        android:layout_gravity="left|center_vertical">
+    </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"

@@ -67,6 +67,7 @@ public class MoneyValue extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_money_value, container, false);
 
+        money = "";
         Button del = (Button)view.findViewById(R.id.del);
         del.setOnClickListener(getButtonOnClickListener());
         Button ac = (Button)view.findViewById(R.id.ac);
