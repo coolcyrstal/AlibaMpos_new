@@ -25,7 +25,7 @@ public class LoginPage extends AppCompatActivity{
     private static final boolean AUTO_HIDE = true;
     private static final int AUTO_HIDE_DELAY_MILLIS = 3000;
     private static final int UI_ANIMATION_DELAY = 300;
-    public static int check_login = 0;
+    public static int check_login = 0, confirm_logout = 0;
     private final Handler mHideHandler = new Handler();
     private View mContentView;
     private EditText username, password;
@@ -146,25 +146,8 @@ public class LoginPage extends AppCompatActivity{
                 button.setY(newpoint_y);
                 button.setText("Logout");
             } else{
-                check_login = 0;
-                countPage = -1;
-//                i.remove(fragment);
-
-                findViewById(R.id.logo).setVisibility(View.VISIBLE);
-                findViewById(R.id.username).setVisibility(View.VISIBLE);
-                findViewById(R.id.password).setVisibility(View.VISIBLE);
-                getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
-                setTitle("Log In");
-//                i.commit();
-//                myText.setText("You're logout");
-                button.setX(point_x);
-                button.setY(point_y - 200);
-                button.setText("Submit");
-                lView.addView(myText);
-                i.commit();
+                logoutDialog(LoginPage.this, "Logout", "Are you sure to logout?", "Confirm", "No");
             }
-
         }
     }
 
@@ -188,7 +171,7 @@ public class LoginPage extends AppCompatActivity{
     @Override
     public void onBackPressed(){
         if(countPage == -1){
-            quitProgramDialog(LoginPage.this, "Quit Program", "Are you sure to exit application", "Yes", "No");
+            quitProgramDialog(LoginPage.this, "Quit Program", "Are you sure to exit application?", "Yes", "No");
         } else if(countPage == 0){
             findViewById(R.id.logo).setVisibility(View.VISIBLE);
             findViewById(R.id.username).setVisibility(View.VISIBLE);
@@ -249,13 +232,13 @@ public class LoginPage extends AppCompatActivity{
         return downloadDialog.show();
     }
 
-    private static AlertDialog logoutDialog(final AppCompatActivity act, CharSequence title,
-                                                 CharSequence message, CharSequence buttonYes, CharSequence buttonNo){
+    private AlertDialog logoutDialog(final AppCompatActivity act, CharSequence title,
+                                     CharSequence message, CharSequence buttonYes, CharSequence buttonNo){
         AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
         downloadDialog.setTitle(title).setMessage(message).setPositiveButton(buttonYes, new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                confirmLogout();
             }
         }).setNegativeButton(buttonNo, new DialogInterface.OnClickListener(){
             @Override
@@ -263,5 +246,31 @@ public class LoginPage extends AppCompatActivity{
             }
         });
         return downloadDialog.show();
+    }
+
+    private void confirmLogout(){
+        check_login = 0;
+        countPage = -1;
+//                i.remove(fragment);
+
+        StartPayment fragment = new StartPayment();
+        FragmentTransaction i = getSupportFragmentManager().beginTransaction();
+        findViewById(R.id.logo).setVisibility(View.VISIBLE);
+        findViewById(R.id.username).setVisibility(View.VISIBLE);
+        findViewById(R.id.password).setVisibility(View.VISIBLE);
+        getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+        setTitle("Log In");
+//                i.commit();
+//                myText.setText("You're logout");
+        Button button = (Button)findViewById(R.id.signin_button);
+        button.setX(point_x);
+        button.setY(point_y - 200);
+        button.setText("Submit");
+        FrameLayout lView = (FrameLayout)findViewById(R.id.loginpage);
+        TextView myText = new TextView(this);
+        lView.addView(myText);
+        i.commit();
+        confirm_logout = 0;
     }
 }

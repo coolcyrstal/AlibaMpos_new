@@ -242,7 +242,8 @@ public class MoneyValue extends Fragment {
         }
         if(money.length() <= 2){
             moneypay.setText("");
-            moneydot.setText(money);
+            if(money.length() == 1){moneydot.setText("0" + money);}
+            else{moneydot.setText(money);}
         } else{
             moneypay.setText(money.substring(0,money.length() - 2));
             moneydot.setText(money.substring(money.length() - 2,money.length()));
