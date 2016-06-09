@@ -31,7 +31,7 @@ public class LoginPage extends AppCompatActivity{
     private EditText username, password;
     public static int countPage = -1;
     public static String m_id = "", tele_num = "";
-    private int newpoint_x = 650, newpoint_y = 20, point_x = 0,point_y = 0;
+    private int newpoint_x = 680, newpoint_y = 20, point_x = 0,point_y = 0;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override

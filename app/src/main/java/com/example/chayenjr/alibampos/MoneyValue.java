@@ -203,7 +203,9 @@ public class MoneyValue extends Fragment {
                     case R.id.ac:money = "";break;
                     case R.id.pay:
                         goScanCodePage();
-                        showreceipt = paymentmoney + "." + paymentmoneydot;
+                        if(paymentmoney == ""){
+                            showreceipt = "0" + "." + paymentmoneydot;
+                        }else{showreceipt = paymentmoney + "." + paymentmoneydot;}
                         break;
                     case R.id.one:money += "1";break;
                     case R.id.two:money += "2";break;
