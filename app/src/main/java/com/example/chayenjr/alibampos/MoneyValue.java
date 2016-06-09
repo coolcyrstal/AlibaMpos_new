@@ -262,5 +262,6 @@ public class MoneyValue extends Fragment {
         i.replace(R.id.scancodepage, fragment).addToBackStack(null);
         i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         i.commit();
+        LoginPage.countPage = 3;
     }
 }

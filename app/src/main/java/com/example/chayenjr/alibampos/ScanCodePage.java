@@ -107,6 +107,7 @@ public class ScanCodePage extends Fragment {
                 i.replace(R.id.sendrecipepage, fragment).addToBackStack(null);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 i.commit();
+                LoginPage.countPage = 4;
                 break;
             case R.id.goscanqrcode:
                 try {
@@ -121,6 +122,7 @@ public class ScanCodePage extends Fragment {
                 i.replace(R.id.sendrecipepage, fragment).addToBackStack(null);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 i.commit();
+                LoginPage.countPage = 4;
                 break;
         }
     }

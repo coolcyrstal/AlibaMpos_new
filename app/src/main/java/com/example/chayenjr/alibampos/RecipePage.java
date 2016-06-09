@@ -92,6 +92,7 @@ public class RecipePage extends Fragment {
         i.commit();
         getActivity().setTitle("AlibaMpos's shop");
         getActivity().findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
+        LoginPage.countPage = 1;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -88,6 +88,7 @@ public class SendRecipePage extends Fragment {
         i.replace(R.id.recipepage, fragment).addToBackStack(null);
         i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         i.commit();
+        LoginPage.countPage = 5;
     }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

@@ -180,7 +180,29 @@ public class LoginPage extends AppCompatActivity{
             setTitle("AlibaMpos's shop");
             countPage = 1;
         } else if(countPage == 3){
-
+            MoneyValue fragment = new MoneyValue();
+            FragmentTransaction i = getSupportFragmentManager().beginTransaction();
+            i.replace(R.id.moneypay, fragment).addToBackStack(null);
+            i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            i.commit();
+            setTitle("AlibaMpos");
+            countPage = 2;
+        } else if(countPage == 4){
+            ScanCodePage fragment = new ScanCodePage();
+            FragmentTransaction i = getSupportFragmentManager().beginTransaction();
+            i.replace(R.id.scancodepage, fragment).addToBackStack(null);
+            i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            i.commit();
+            countPage = 3;
+        } else if(countPage == 5){
+            SendRecipePage fragment = new SendRecipePage();
+            FragmentTransaction i = getSupportFragmentManager().beginTransaction();
+            findViewById(R.id.goscanbarcode).setVisibility(View.INVISIBLE);
+            findViewById(R.id.goscanqrcode).setVisibility(View.INVISIBLE);
+            i.replace(R.id.sendrecipepage, fragment).addToBackStack(null);
+            i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            i.commit();
+            countPage = 4;
         }
     }
 
