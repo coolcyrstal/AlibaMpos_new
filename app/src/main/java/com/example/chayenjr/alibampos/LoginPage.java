@@ -162,4 +162,25 @@ public class LoginPage extends AppCompatActivity{
         view.getLocationOnScreen(location);
         return new Point(location[0], location[1]);
     }
+
+    @Override
+    public void onBackPressed(){
+        quitProgramDialog(LoginPage.this, "Quit Program", "Are you sure to exit application", "Yes", "No");
+    }
+
+    private static AlertDialog quitProgramDialog(final AppCompatActivity act, CharSequence title,
+                                          CharSequence message, CharSequence buttonYes, CharSequence buttonNo){
+        AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
+        downloadDialog.setTitle(title).setMessage(message).setPositiveButton(buttonYes, new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                System.exit(0);
+            }
+        }).setNegativeButton(buttonNo, new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        return downloadDialog.show();
+    }
 }
