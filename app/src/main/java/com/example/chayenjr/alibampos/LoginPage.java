@@ -10,11 +10,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Random;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -30,7 +34,7 @@ public class LoginPage extends AppCompatActivity{
     private View mContentView;
     private EditText username, password;
     public static int countPage = -1;
-    public static String m_id = "", tele_num = "";
+    public static String m_id = "", tele_num = "", otp_rand_num = "";
     private int newpoint_x = 680, newpoint_y = 20, point_x = 0,point_y = 0;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
@@ -109,7 +113,7 @@ public class LoginPage extends AppCompatActivity{
 
         if((check_login == 0 || check_login == 1) && username.getText().toString().equals("") && password.getText().toString().equals("")){
             //wrong password
-            showDialog(LoginPage.this, "Merchant_ID incorrect", "Please type again", "OK");
+            showDialog(LoginPage.this, "Merchant_ID incorrect", "Please type again.", "OK");
         } else {
             //correct password
             if(check_login == 0){
@@ -119,6 +123,7 @@ public class LoginPage extends AppCompatActivity{
                 findViewById(R.id.username).setVisibility(View.INVISIBLE);
                 findViewById(R.id.password).setVisibility(View.INVISIBLE);
 //                myText.setText("You're login");
+                sendSMS();
                 OtpCheckPage fragment_otp = new OtpCheckPage();
                 FragmentTransaction a = getSupportFragmentManager().beginTransaction();
                 a.replace(R.id.otpcheckPage, fragment_otp).addToBackStack(null);
@@ -128,24 +133,28 @@ public class LoginPage extends AppCompatActivity{
                 setTitle("OTP Check");
                 a.commit();
             } else if(check_login == 1){
-                check_login = 2;
-                countPage = 1;
-                username.getText().clear();
-                password.getText().clear();
-                findViewById(R.id.logo).setVisibility(View.INVISIBLE);
+                if(((EditText)findViewById(R.id.otp_num)).getText().toString() == otp_rand_num){
+                    check_login = 2;
+                    countPage = 1;
+                    username.getText().clear();
+                    password.getText().clear();
+                    findViewById(R.id.logo).setVisibility(View.INVISIBLE);
 //                i.add(R.id.startpaymentPage, fragment);
-                getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
-                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                setTitle("AlibaMpos's shop");
-                findViewById(R.id.username).setVisibility(View.INVISIBLE);
-                findViewById(R.id.password).setVisibility(View.INVISIBLE);
+                    getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                    i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
+                    i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                    setTitle("AlibaMpos's shop");
+                    findViewById(R.id.username).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.password).setVisibility(View.INVISIBLE);
 //                i.commit();
-                lView.addView(myText);
-                i.commit();
-                button.setX(newpoint_x);
-                button.setY(newpoint_y);
-                button.setText("Logout");
+                    lView.addView(myText);
+                    i.commit();
+                    button.setX(newpoint_x);
+                    button.setY(newpoint_y);
+                    button.setText("Logout");
+                } else{
+                    showDialogOTP(LoginPage.this, "OTP incorrect", "Please type again.", "OK");
+                }
             } else{
                 logoutDialog(LoginPage.this, "Logout", "Are you sure to logout?", "Confirm", "No");
             }
@@ -153,6 +162,17 @@ public class LoginPage extends AppCompatActivity{
     }
 
     private static AlertDialog showDialog(final AppCompatActivity act, CharSequence title,
+                                          CharSequence message, CharSequence buttonYes){
+        AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
+        downloadDialog.setTitle(title).setMessage(message).setPositiveButton(buttonYes, new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        return downloadDialog.show();
+    }
+
+    private static AlertDialog showDialogOTP(final AppCompatActivity act, CharSequence title,
                                           CharSequence message, CharSequence buttonYes){
         AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
         downloadDialog.setTitle(title).setMessage(message).setPositiveButton(buttonYes, new DialogInterface.OnClickListener(){
@@ -273,5 +293,25 @@ public class LoginPage extends AppCompatActivity{
         lView.addView(myText);
         i.commit();
         confirm_logout = 0;
+    }
+
+    private void sendSMS(){
+//        Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+//        sendIntent.putExtra("sms_body", "default content");
+//        sendIntent.setType("vnd.android-dir/mms-sms");
+//        startActivity(sendIntent);
+        EditText textPhoneNo = (EditText)findViewById(R.id.textPassword);
+        Random rand = new Random();
+        int n = rand.nextInt(8999) + 1000;
+        otp_rand_num = String.valueOf(n);
+        String phoneNo = textPhoneNo.getText().toString();
+        try {
+            SmsManager smsManager = SmsManager.getDefault();
+            smsManager.sendTextMessage(phoneNo, null, otp_rand_num, null, null);
+            Toast.makeText(getApplicationContext(), "SMS Sent!", Toast.LENGTH_LONG).show();
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "SMS faild, please try again later!", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
     }
 }
