@@ -75,7 +75,7 @@
         android:layout_marginTop="40dp"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:hint="0123"
@@ -85,7 +85,8 @@
         android:textColorHint="#33b5e5"
         android:layout_gravity="left|center"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_money_border"/>
 
     <FrameLayout
         android:layout_width="match_parent"
