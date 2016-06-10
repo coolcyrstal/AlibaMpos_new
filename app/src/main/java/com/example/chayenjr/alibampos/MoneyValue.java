@@ -205,8 +205,7 @@ public class MoneyValue extends Fragment {
                         goScanCodePage();
                         if(paymentmoney.equals("")){
                             showreceipt = "0" + "." + paymentmoneydot;
-                        }
-                        if(paymentmoneydot.equals("")){
+                        } else if(paymentmoneydot.equals("")){
                             showreceipt = "0" + "." + "00";
                         }else{showreceipt = paymentmoney + "." + paymentmoneydot;}
                         break;
