@@ -89,6 +89,7 @@ public class LoginPage extends AppCompatActivity{
                 Point point = getPointOfView(butt);
                 point_x = point.x;
                 point_y = point.y;
+                newpoint_x = 2 * point_x;
             }
         }, 3000);
     }

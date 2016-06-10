@@ -29,13 +29,14 @@
         android:background="@drawable/button_money_border">
         <EditText
             android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:id="@+id/textmobile"
             android:hint="0812345678"
             android:focusable="true"
             android:layout_marginBottom="80dp"
             android:layout_marginLeft="40dp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"/>
 
         <ImageView
             android:layout_width="40dp"
@@ -56,13 +57,14 @@
         android:background="@drawable/button_money_border">
         <EditText
             android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:id="@+id/textemail"
             android:hint="0812345678"
             android:focusable="true"
             android:layout_marginBottom="80dp"
             android:layout_marginLeft="40dp"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"/>
 
         <ImageView
             android:layout_width="40dp"
