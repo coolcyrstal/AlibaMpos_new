@@ -1,13 +1,17 @@
 package com.example.chayenjr.alibampos;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -82,6 +86,8 @@ public class SendRecipePage extends Fragment {
     }
 
     public void sendrecipe(View v){
+        if(((EditText) getActivity().findViewById(R.id.textemail)).getText().toString().equals("")){}
+        else{sendEmail();}
         getActivity().findViewById(R.id.sendrecipebutton).setVisibility(View.INVISIBLE);
         RecipePage fragment = new RecipePage();
         FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
@@ -97,33 +103,28 @@ public class SendRecipePage extends Fragment {
         }
     }
 
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        mListener = null;
-//    }
+    protected void sendEmail() {
+        Log.i("Send email", "");
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+        String[] TO = {((EditText) getActivity().findViewById(R.id.textemail)).getText().toString()};
+//        String[] CC = {"xyz@gmail.com"};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+//        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Test Sending Email");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "e-Receipt for amount THB" + MoneyValue.showreceipt);
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            getActivity().finish();
+            Log.i("Finished sending email.", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(getActivity(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
