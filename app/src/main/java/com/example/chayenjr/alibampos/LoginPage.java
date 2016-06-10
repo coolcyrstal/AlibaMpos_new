@@ -88,7 +88,7 @@ public class LoginPage extends AppCompatActivity{
                 Button butt = (Button)findViewById(R.id.signin_button);
                 Point point = getPointOfView(butt);
                 point_x = point.x;
-                point_y = point.y;
+                point_y = 12*point.y/13;
                 newpoint_x = 2 * point_x;
             }
         }, 3000);

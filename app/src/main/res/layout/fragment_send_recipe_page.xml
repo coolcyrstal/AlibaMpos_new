@@ -84,7 +84,7 @@
         android:layout_gravity="center">
 
         <Button
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="50dp"
             android:id = "@+id/sendrecipebutton"
             android:text="Send Receipt"
