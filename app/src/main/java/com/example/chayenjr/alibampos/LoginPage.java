@@ -34,7 +34,7 @@ public class LoginPage extends AppCompatActivity{
     private View mContentView;
     private EditText username, password;
     public static int countPage = -1;
-    public static String m_id = "", tele_num = "", otp_rand_num = "";
+    public static String m_id = "", tele_num = "", otp_rand_num = "1234";
     private int newpoint_x = 680, newpoint_y = 20, point_x = 0,point_y = 0;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
@@ -133,7 +133,8 @@ public class LoginPage extends AppCompatActivity{
                 setTitle("OTP Check");
                 a.commit();
             } else if(check_login == 1){
-                if(((EditText)findViewById(R.id.otp_num)).getText().toString() == otp_rand_num){
+                String x = ((EditText) findViewById(R.id.otp_num)).getText().toString();
+                if(x.equals(otp_rand_num)){
                     check_login = 2;
                     countPage = 1;
                     username.getText().clear();
@@ -307,10 +308,10 @@ public class LoginPage extends AppCompatActivity{
         String phoneNo = textPhoneNo.getText().toString();
         try {
             SmsManager smsManager = SmsManager.getDefault();
-            smsManager.sendTextMessage(phoneNo, null, otp_rand_num, null, null);
+            smsManager.sendTextMessage(phoneNo, null, "OTP number: " + otp_rand_num, null, null);
             Toast.makeText(getApplicationContext(), "SMS Sent!", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "SMS faild, please try again later!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "SMS failed, please try again later!", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }

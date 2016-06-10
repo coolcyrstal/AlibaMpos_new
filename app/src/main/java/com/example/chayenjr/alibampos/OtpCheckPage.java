@@ -69,6 +69,7 @@ public class OtpCheckPage extends Fragment {
         mer_id.setText(LoginPage.m_id);
         TextView phone_num = (TextView) view.findViewById(R.id.tele_num);
         phone_num.setText(LoginPage.tele_num);
+//        phone_num.setText(LoginPage.otp_rand_num);
         return view;
     }
 
