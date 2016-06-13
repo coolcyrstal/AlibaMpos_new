@@ -181,7 +181,7 @@ public class LoginPage extends AppCompatActivity{
             countPage = -1;
             check_login = 0;
         } else if(countPage == 1){
-        } else if(countPage == 2){
+        } else if(countPage == 2 || countPage == 201 || countPage == 202 || countPage == 203 || countPage == 204){
             StartPayment fragment = new StartPayment();
             FragmentTransaction i = getSupportFragmentManager().beginTransaction();
             findViewById(R.id.signin_button).setVisibility(View.VISIBLE);

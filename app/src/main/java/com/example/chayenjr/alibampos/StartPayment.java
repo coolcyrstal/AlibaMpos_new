@@ -49,34 +49,88 @@ public class StartPayment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_start_payment, container, false);
-        View gopaymentbutton = view.findViewById(R.id.startpaymentbutton);
-        final Button button = (Button)view.findViewById(R.id.startpaymentbutton);
-        gopaymentbutton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                button.setText("go go go ---------");
-                buttonOnClickGoPayment();
-//                removeView();
-            }
-        });
+
+        Button gopaymentbutton = (Button)view.findViewById(R.id.startpaymentbutton);
+        gopaymentbutton.setOnClickListener(getButtonOnClickListener());
+        Button history = (Button)view.findViewById(R.id.history);
+        history.setOnClickListener(getButtonOnClickListener());
+        Button settings = (Button)view.findViewById(R.id.settings);
+        settings.setOnClickListener(getButtonOnClickListener());
+        Button support = (Button)view.findViewById(R.id.support);
+        support.setOnClickListener(getButtonOnClickListener());
+        Button information = (Button)view.findViewById(R.id.information);
+        information.setOnClickListener(getButtonOnClickListener());
 
         return view;
     }
 
-    public void buttonOnClickGoPayment(){
-        getActivity().findViewById(R.id.startpaymentbutton).setVisibility(View.INVISIBLE);
-        getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
-        getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
-        getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
-        getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
+    private View.OnClickListener getButtonOnClickListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                buttonOnClickGoPayment(v);
+            }
+        };
+    }
+
+    public void buttonOnClickGoPayment(View v){
         MoneyValue fragment = new MoneyValue();
+        HistoryPage fragment_history = new HistoryPage();
+        SettingPage fragment_setting = new SettingPage();
+        SupportPage fragment_support = new SupportPage();
+        InformationPage fragment_information = new InformationPage();
         FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-        i.replace(R.id.moneypay, fragment).addToBackStack(null);
-        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        i.commit();
-        LoginPage.countPage = 2;
-        getActivity().setTitle("AlibaMpos");
-        getActivity().findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
+        switch (v.getId()){
+            case R.id.startpaymentbutton:
+                getActivity().findViewById(R.id.startpaymentbutton).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
+                i.replace(R.id.moneypay, fragment).addToBackStack(null);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                i.commit();
+                LoginPage.countPage = 2;
+                getActivity().setTitle("AlibaMpos");
+                getActivity().findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
+                break;
+            case R.id.history:
+                i.replace(R.id.historypage, fragment_history).addToBackStack(null);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                i.commit();
+                getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
+                LoginPage.countPage = 201;
+                break;
+            case R.id.settings:
+                i.replace(R.id.settingspage, fragment_setting).addToBackStack(null);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                i.commit();
+                getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
+                LoginPage.countPage = 202;
+                break;
+            case R.id.support:
+                i.replace(R.id.settingspage, fragment_support).addToBackStack(null);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                i.commit();
+                getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
+                LoginPage.countPage = 203;
+                break;
+            case R.id.information:
+                i.replace(R.id.settingspage, fragment_information).addToBackStack(null);
+                i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                i.commit();
+                getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
+                LoginPage.countPage = 204;
+                break;
+        }
     }
 
     public void removeView(){

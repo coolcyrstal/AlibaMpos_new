@@ -8,6 +8,14 @@
 
 
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:id="@+id/bg_app"
+        android:src="@drawable/bg_app"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:id="@+id/logo"
