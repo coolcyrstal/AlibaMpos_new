@@ -203,7 +203,7 @@ public class MoneyValue extends Fragment {
                     case R.id.ac:money = "";break;
                     case R.id.pay:
                         goScanCodePage();
-                        if(paymentmoney.equals("") && paymentmoneydot.equalsIgnoreCase("")){
+                        if(paymentmoney.equals("") && !(paymentmoneydot.equals(""))){
                             showreceipt = "0" + "." + paymentmoneydot;
                         } else if(paymentmoneydot.equals("")){
                             showreceipt = "0" + "." + "00";

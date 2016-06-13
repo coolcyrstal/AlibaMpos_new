@@ -26,75 +26,73 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Merchant_ID    : "
+        android:text="Merchant ID"
         android:textSize="20dp"
         android:id="@+id/m_id_text"
         android:textStyle="bold"
-        android:textColor="#33b5e5"
         android:layout_gravity="left|center"
         android:layout_marginBottom="40dp"
         android:layout_marginLeft="50dp"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="1234"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:id="@+id/m_id"
-        android:textColor="#33b5e5"
         android:layout_gravity="center|center"
         android:layout_marginBottom="40dp"
-        android:layout_marginLeft="30dp"/>
+        android:layout_marginLeft="70dp"
+        android:background="@drawable/button_money_border"
+        android:textAlignment="center"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Phone Number :"
+        android:text="Moblie No"
         android:textSize="20dp"
         android:textStyle="bold"
         android:id="@+id/tele_num_text"
-        android:textColor="#33b5e5"
         android:layout_gravity="left|center"
         android:layout_marginLeft="50dp"/>
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="0812345678"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:id="@+id/tele_num"
-        android:textColor="#33b5e5"
         android:layout_gravity="center|center"
-        android:layout_marginLeft="70dp"/>
+        android:layout_marginLeft="70dp"
+        android:background="@drawable/button_money_border"
+        android:textAlignment="center"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="OTP :"
+        android:text="OTP Code"
         android:textStyle="bold"
         android:textSize="20dp"
         android:id="@+id/otp_text"
-        android:textColor="#33b5e5"
         android:layout_gravity="left|center"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="40dp"/>
 
     <EditText
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:hint="0123"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:id="@+id/otp_num"
-        android:textColor="#33b5e5"
-        android:textColorHint="#33b5e5"
-        android:layout_gravity="left|center"
-        android:layout_marginLeft="120dp"
+        android:layout_gravity="center|center"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/button_money_border"/>
+        android:background="@drawable/button_money_border"
+        android:textAlignment="center"/>
 
     <FrameLayout
         android:layout_width="match_parent"

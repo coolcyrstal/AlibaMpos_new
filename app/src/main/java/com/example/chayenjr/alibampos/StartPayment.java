@@ -98,6 +98,7 @@ public class StartPayment extends Fragment {
                 i.replace(R.id.historypage, fragment_history).addToBackStack(null);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 i.commit();
+                getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
                 getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
                 getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
                 getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
@@ -108,6 +109,7 @@ public class StartPayment extends Fragment {
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 i.commit();
                 getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
                 getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
                 getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
                 LoginPage.countPage = 202;
@@ -118,6 +120,7 @@ public class StartPayment extends Fragment {
                 i.commit();
                 getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
                 getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
                 getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
                 LoginPage.countPage = 203;
                 break;
@@ -128,6 +131,7 @@ public class StartPayment extends Fragment {
                 getActivity().findViewById(R.id.history).setVisibility(View.INVISIBLE);
                 getActivity().findViewById(R.id.settings).setVisibility(View.INVISIBLE);
                 getActivity().findViewById(R.id.support).setVisibility(View.INVISIBLE);
+                getActivity().findViewById(R.id.information).setVisibility(View.INVISIBLE);
                 LoginPage.countPage = 204;
                 break;
         }
