@@ -16,12 +16,12 @@
         android:scaleType="centerCrop"/>
 
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:id="@+id/logo"
         android:layout_gravity="top"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/logo_psb"
         android:scaleType="fitXY"
         android:padding="1dp"
@@ -35,18 +35,18 @@
         android:focusable="true"
         android:layout_below="@+id/textView"
         android:textColor="#AAAAAA"
-        android:textSize="20dp"
-        android:layout_marginTop="70dp"
+        android:textSize="35dp"
+        android:layout_marginTop="120dp"
         android:layout_gravity="left"
-        android:layout_marginLeft="115dp"/>
+        android:layout_marginLeft="180dp"/>
 
     <RelativeLayout
-        android:layout_width="120dp"
-        android:layout_height="50dp"
+        android:layout_width="240dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
         android:layout_gravity="right"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="80dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="110dp"
         android:background="@drawable/button_money_border">
 
         <EditText
@@ -59,7 +59,7 @@
             android:textColorHighlight="@android:color/holo_blue_bright"
             android:textColorHint="@android:color/holo_blue_bright"
             android:textColor="@android:color/holo_blue_bright"
-            android:textSize="30dp"
+            android:textSize="40dp"
             android:textStyle="bold"
             android:layout_gravity="center_vertical|right"
             android:gravity="center_vertical|right"
@@ -68,9 +68,9 @@
             android:ellipsize="end"
             android:textDirection="rtl"
             android:layoutDirection="rtl"
-            android:layout_marginRight="42dp"/>
+            android:layout_marginRight="50dp"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textdot"
             android:hint = "."
@@ -79,13 +79,14 @@
             android:textColorHighlight="@android:color/holo_blue_bright"
             android:textColorHint="@android:color/holo_blue_bright"
             android:textColor="@android:color/holo_blue_bright"
-            android:textSize="30dp"
+            android:textSize="40dp"
             android:textStyle="bold"
             android:layout_gravity="center|right"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="75dp" />
+            android:gravity="center_vertical|right"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="42dp"/>
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/textmoneydot"
             android:hint = "00"
@@ -94,11 +95,10 @@
             android:textColorHighlight="@android:color/holo_blue_bright"
             android:textColorHint="@android:color/holo_blue_bright"
             android:textColor="@android:color/holo_blue_bright"
-            android:textSize="30dp"
+            android:textSize="40dp"
             android:textStyle="bold"
             android:layout_gravity = "center_vertical|right"
             android:gravity="center_vertical|right"
-            android:layout_marginLeft="80dp"
             android:background="@android:color/transparent" />
 
 
@@ -106,43 +106,43 @@
     </RelativeLayout>
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="30dp"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
         android:id = "@+id/del"
         android:background="@drawable/icon_del"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="90dp"
         android:layout_gravity="right|top" />
 
     <EditText
-        android:layout_width="280dp"
-        android:layout_height="30dp"
+        android:layout_width="500dp"
+        android:layout_height="60dp"
         android:id="@+id/description"
-        android:hint = "        Enter Sale Description Optional"
+        android:hint = " Enter Sale Description Optional"
         android:focusable="true"
         android:layout_below="@+id/textView"
-        android:textSize="15dp"
-        android:layout_marginTop="115dp"
+        android:textSize="35dp"
+        android:layout_marginTop="170dp"
         android:layout_gravity="center|top"
         android:background="@drawable/button_money_border"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="500dp"
+        android:layout_height="380dp"
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_marginTop="20dp">
 
         <LinearLayout 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal" >
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/one"
                 android:text="1"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
@@ -150,10 +150,10 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/two"
                 android:text="2"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
@@ -161,10 +161,10 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/three"
                 android:text="3"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
@@ -173,14 +173,14 @@
 
         <LinearLayout 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal" >
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/four"
                 android:text="4"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
@@ -188,10 +188,10 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/five"
                 android:text="5"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
@@ -199,10 +199,10 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/six"
                 android:text="6"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
@@ -211,14 +211,14 @@
 
         <LinearLayout 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal" >
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/seven"
                 android:text="7"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
@@ -226,10 +226,10 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/eight"
                 android:text="8"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
@@ -237,10 +237,10 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/nine"
                 android:text="9"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:layout_weight="2"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
@@ -249,38 +249,38 @@
 
         <LinearLayout 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/zerozero"
                 android:text="00"
                 android:layout_weight="2"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
                 android:layout_margin="5dp" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/zero"
                 android:layout_weight="2"
                 android:text="0"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
                 android:layout_margin="5dp" />
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="80dp"
                 android:id = "@+id/ac"
                 android:layout_weight="2"
                 android:text="ac"
-                android:textSize="25dp"
+                android:textSize="50dp"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"
                 android:layout_margin="5dp" />
@@ -294,15 +294,15 @@
         android:layout_gravity="center">
 
         <Button
-            android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_width="400dp"
+            android:layout_height="80dp"
             android:id = "@+id/pay"
             android:text="pay"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:layout_gravity="center|bottom"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="100dp"
             android:background="@drawable/btn_start"/>
 
     </FrameLayout>
