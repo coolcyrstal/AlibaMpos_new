@@ -1,0 +1,108 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chayenjr.alibampos.SendRecipePage"
+    android:id="@+id/sendrecipepage"
+    android:background="#ffffff">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:id="@+id/bg_app"
+        android:src="@drawable/bg_app"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textereceipt"
+        android:text = "e-Receipt"
+        android:textStyle="bold"
+        android:editable="false"
+        android:focusable="true"
+        android:layout_below="@+id/textView"
+        android:textColor="#777777"
+        android:textSize="50dp"
+        android:layout_marginTop="90dp"
+        android:layout_gravity="center|top" />
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:id="@+id/mobilenum"
+        android:background="@drawable/button_money_border">
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:id="@+id/textmobile"
+            android:hint="0812345678"
+            android:focusable="true"
+            android:textSize="30dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:id="@+id/imagemoblie"
+            android:layout_marginBottom="0dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_mobile" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/email"
+        android:background="@drawable/button_money_border">
+        <EditText
+            android:layout_width="320dp"
+            android:layout_height="60dp"
+            android:id="@+id/textemail"
+            android:hint="someone@gmail.com"
+            android:focusable="true"
+            android:textSize="30dp"
+            android:layout_marginBottom="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:id="@+id/imageemail"
+            android:layout_marginBottom="0dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_email" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/recipepage"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:id = "@+id/sendrecipebutton"
+            android:text="Send Receipt"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/btn_start"/>
+    </FrameLayout>
+</FrameLayout>

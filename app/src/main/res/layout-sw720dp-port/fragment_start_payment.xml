@@ -1,0 +1,126 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartPayment"
+    android:padding="0dp"
+    android:id="@+id/startpaymentPage">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:adjustViewBounds="true"
+        android:id="@+id/imageView"
+        android:layout_gravity="center|top"
+        android:src="@drawable/logo_psb"
+        android:layout_marginTop="100dp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/moneypay"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="450dp"
+            android:layout_height="60dp"
+            android:text="Start Accepting Payment"
+            android:textSize="30dp"
+            android:id="@+id/startpaymentbutton"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp"
+            android:background="@drawable/btn_start"
+            android:onClick="buttonOnClick"
+            android:clickable="true" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/historypage"
+        android:layout_gravity="center">
+
+            <Button
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:id="@+id/history"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="150dp"
+                android:layout_marginRight="180dp"
+                android:background="@drawable/icon_history"
+                android:clickable="true" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/settingspage"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:id="@+id/settings"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="150dp"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/icon_setting"
+            android:clickable="true" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/supportpage"
+        android:layout_gravity="center">
+            <Button
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:id="@+id/support"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="150dp"
+                android:layout_marginLeft="60dp"
+                android:background="@drawable/icon_support"
+                android:clickable="true" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/informationpage"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:id="@+id/information"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="150dp"
+            android:layout_marginLeft="180dp"
+            android:background="@drawable/icon_information"
+            android:clickable="true" />
+
+    </FrameLayout>
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:adjustViewBounds="true"-->
+        <!--android:id="@+id/bg_app"-->
+        <!--android:src="@drawable/bg_app"-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:layout_below = "@id/signin_button"/>-->
+
+</FrameLayout>

@@ -20,7 +20,7 @@
         android:layout_height="120dp"
         android:id="@+id/logo"
         android:layout_gravity="top"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="90dp"
         android:layout_marginTop="45dp"
         android:src="@drawable/logo_psb"
         android:scaleType="fitXY"
@@ -38,15 +38,15 @@
         android:textSize="35dp"
         android:layout_marginTop="120dp"
         android:layout_gravity="left"
-        android:layout_marginLeft="180dp"/>
+        android:layout_marginLeft="220dp"/>
 
     <RelativeLayout
-        android:layout_width="240dp"
+        android:layout_width="300dp"
         android:layout_height="80dp"
         android:orientation="horizontal"
         android:layout_gravity="right"
         android:layout_marginTop="80dp"
-        android:layout_marginRight="110dp"
+        android:layout_marginRight="145dp"
         android:background="@drawable/button_money_border">
 
         <EditText
@@ -110,25 +110,25 @@
         android:layout_height="50dp"
         android:id = "@+id/del"
         android:background="@drawable/icon_del"
-        android:layout_marginRight="50dp"
+        android:layout_marginRight="80dp"
         android:layout_marginTop="90dp"
         android:layout_gravity="right|top" />
 
     <EditText
-        android:layout_width="500dp"
+        android:layout_width="600dp"
         android:layout_height="60dp"
         android:id="@+id/description"
-        android:hint = " Enter Sale Description Optional"
+        android:hint = "      Enter Sale Description Optional"
         android:focusable="true"
         android:layout_below="@+id/textView"
         android:textSize="35dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="180dp"
         android:layout_gravity="center|top"
         android:background="@drawable/button_money_border"/>
 
     <LinearLayout
-        android:layout_width="500dp"
-        android:layout_height="380dp"
+        android:layout_width="600dp"
+        android:layout_height="420dp"
         android:orientation="vertical"
         android:layout_gravity="center"
         android:layout_marginTop="20dp">
@@ -139,7 +139,7 @@
             android:orientation="horizontal" >
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/one"
                 android:text="1"
                 android:textSize="50dp"
@@ -150,7 +150,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/two"
                 android:text="2"
                 android:textSize="50dp"
@@ -161,7 +161,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/three"
                 android:text="3"
                 android:textSize="50dp"
@@ -177,7 +177,7 @@
             android:orientation="horizontal" >
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/four"
                 android:text="4"
                 android:textSize="50dp"
@@ -188,7 +188,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/five"
                 android:text="5"
                 android:textSize="50dp"
@@ -199,7 +199,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/six"
                 android:text="6"
                 android:textSize="50dp"
@@ -215,7 +215,7 @@
             android:orientation="horizontal" >
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/seven"
                 android:text="7"
                 android:textSize="50dp"
@@ -226,7 +226,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/eight"
                 android:text="8"
                 android:textSize="50dp"
@@ -237,7 +237,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/nine"
                 android:text="9"
                 android:textSize="50dp"
@@ -254,7 +254,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/zerozero"
                 android:text="00"
                 android:layout_weight="2"
@@ -265,7 +265,7 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/zero"
                 android:layout_weight="2"
                 android:text="0"
@@ -276,10 +276,10 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="90dp"
                 android:id = "@+id/ac"
                 android:layout_weight="2"
-                android:text="ac"
+                android:text="AC"
                 android:textSize="50dp"
                 android:textColor="@android:color/holo_blue_light"
                 android:background="@drawable/button_money_border"

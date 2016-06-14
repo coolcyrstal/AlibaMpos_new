@@ -1,0 +1,134 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.example.chayenjr.alibampos.LoginPage"
+    android:id="@+id/loginpage">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:id="@+id/bg_app"
+        android:src="@drawable/bg_app"
+        android:scaleType="centerCrop"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/splashscreenpage">
+    </FrameLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:id="@+id/logo"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="70dp"
+        android:src="@drawable/logo_psb" />
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:id="@+id/username"
+        android:background="@drawable/button_money_border">
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:id="@+id/textUsername"
+            android:hint="Merchant_ID"
+            android:focusable="true"
+            android:textColorHighlight="@android:color/holo_blue_bright"
+            android:textColorHint="@android:color/holo_blue_bright"
+            android:textColor="@android:color/holo_blue_bright"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            android:layout_marginLeft="80dp"
+            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:id="@+id/imageView"
+            android:layout_marginBottom="0dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_user" />
+    </RelativeLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:id="@+id/password"
+        android:background="@drawable/button_money_border">
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:id="@+id/textPassword"
+            android:layout_gravity="center"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColorHighlight="@android:color/holo_blue_bright"
+            android:textColorHint="@android:color/holo_blue_bright"
+            android:textColor="@android:color/holo_blue_bright"
+            android:hint="0812345678"
+            android:background="@android:color/transparent"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:id="@+id/imageView2"
+            android:layout_marginBottom="0dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_mobile_grey" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/otpcheckPage"
+        android:layout_gravity="left|center_vertical">
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/startpaymentPage"
+        android:layout_gravity="left|center_vertical">
+
+        <Button
+            android:id="@+id/signin_button"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="Submit"
+            android:textSize="30dp"
+            android:nestedScrollingEnabled="false"
+            android:onClick="buttonOnClick"
+            android:background="@drawable/btn_start"
+            android:layout_gravity="center|bottom"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="170dp"/>
+    </FrameLayout>
+
+</FrameLayout>

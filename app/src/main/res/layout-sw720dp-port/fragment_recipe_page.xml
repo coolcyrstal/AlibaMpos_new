@@ -1,0 +1,75 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.chayenjr.alibampos.RecipePage"
+    android:id="@+id/recipepage"
+    android:background="#ffffff">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:id="@+id/bg_app"
+        android:src="@drawable/bg_app"
+        android:scaleType="centerCrop"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:layout_gravity="center|top"
+        android:src="@drawable/logo_psb"
+        android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Thank you"
+        android:textSize="40dp"
+        android:id="@+id/thank"
+        android:textStyle="bold"
+        android:textColor="#33b5e5"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginBottom="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:textSize="30dp"
+        android:id="@+id/paymoney"
+        android:textColor="#33b5e5"
+        android:layout_gravity="center|center"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="has been sent"
+        android:textSize="30dp"
+        android:id="@+id/textView2"
+        android:textColor="#33b5e5"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="80dp"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/scancodepage"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id = "@+id/homebutton"
+            android:background="@drawable/icon_home"
+            android:layout_gravity="center"
+            android:layout_marginTop="180dp" />
+    </FrameLayout>
+
+</FrameLayout>
