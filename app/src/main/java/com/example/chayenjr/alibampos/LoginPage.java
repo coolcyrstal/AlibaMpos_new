@@ -68,12 +68,14 @@ public class LoginPage extends AppCompatActivity{
         findViewById(R.id.password).setVisibility(View.INVISIBLE);
         findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
 
+        // fragment splash screen
         SplashScreen fragment = new SplashScreen();
         FragmentTransaction i = getSupportFragmentManager().beginTransaction();
         i.replace(R.id.splashscreenpage, fragment).addToBackStack(null);
         i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         i.commit();
 
+        //Do after splash screen delay 3s
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -113,6 +115,7 @@ public class LoginPage extends AppCompatActivity{
         } else {
             //correct password
             if(check_login == 0){
+                //change to otp check page
                 check_login = 1;
                 countPage = 0;
                 findViewById(R.id.logo).setVisibility(View.INVISIBLE);
@@ -128,6 +131,7 @@ public class LoginPage extends AppCompatActivity{
                 setTitle("OTP Verification");
                 a.commit();
             } else if(check_login == 1){
+                //change to home page
                 check_login = 2;
                 countPage = 1;
                 username.getText().clear();
@@ -169,11 +173,14 @@ public class LoginPage extends AppCompatActivity{
         return new Point(location[0], location[1]);
     }
 
+    //Change back button in Android behavior
     @Override
     public void onBackPressed(){
         if(countPage == -1){
+            //quit program
             quitProgramDialog(LoginPage.this, "Quit Program", "Are you sure to exit application?", "Yes", "No");
         } else if(countPage == 0){
+            //from otp page back to login page
             findViewById(R.id.logo).setVisibility(View.VISIBLE);
             findViewById(R.id.username).setVisibility(View.VISIBLE);
             findViewById(R.id.password).setVisibility(View.VISIBLE);
@@ -181,7 +188,9 @@ public class LoginPage extends AppCompatActivity{
             countPage = -1;
             check_login = 0;
         } else if(countPage == 1){
+            //home page(startpaymentpage) logout to exit
         } else if(countPage == 2 || countPage == 201 || countPage == 202 || countPage == 203 || countPage == 204){
+            //back from history/support/setting/information page and moneypaypage
             StartPayment fragment = new StartPayment();
             FragmentTransaction i = getSupportFragmentManager().beginTransaction();
             findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
@@ -191,6 +200,7 @@ public class LoginPage extends AppCompatActivity{
             setTitle("AlipayMpos's shop");
             countPage = 1;
         } else if(countPage == 3){
+            //back from scan code to moneypay
             MoneyValue fragment = new MoneyValue();
             FragmentTransaction i = getSupportFragmentManager().beginTransaction();
             i.replace(R.id.moneypay, fragment).addToBackStack(null);
@@ -199,6 +209,7 @@ public class LoginPage extends AppCompatActivity{
             setTitle("AlipayMpos");
             countPage = 2;
         } else if(countPage == 4){
+            //back from send recipe page to scan code
             ScanCodePage fragment = new ScanCodePage();
             FragmentTransaction i = getSupportFragmentManager().beginTransaction();
             i.replace(R.id.scancodepage, fragment).addToBackStack(null);
@@ -206,6 +217,7 @@ public class LoginPage extends AppCompatActivity{
             i.commit();
             countPage = 3;
         } else if(countPage == 5){
+            // back from recipe page to send receipt
             SendRecipePage fragment = new SendRecipePage();
             FragmentTransaction i = getSupportFragmentManager().beginTransaction();
             findViewById(R.id.goscanbarcode).setVisibility(View.INVISIBLE);
@@ -217,6 +229,7 @@ public class LoginPage extends AppCompatActivity{
         }
     }
 
+    //Diglog to exit program if Yes --> exit, No --> don't change
     private static AlertDialog quitProgramDialog(final AppCompatActivity act, CharSequence title,
                                           CharSequence message, CharSequence buttonYes, CharSequence buttonNo){
         AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);
@@ -233,6 +246,7 @@ public class LoginPage extends AppCompatActivity{
         return downloadDialog.show();
     }
 
+    //Dialog to confirm logout
     private AlertDialog logoutDialog(final AppCompatActivity act, CharSequence title,
                                      CharSequence message, CharSequence buttonYes, CharSequence buttonNo){
         AlertDialog.Builder downloadDialog = new AlertDialog.Builder(act);

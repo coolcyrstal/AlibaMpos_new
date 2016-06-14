@@ -100,6 +100,7 @@ public class ScanCodePage extends Fragment {
                     intent.putExtra("SCAN_MODE", "PRODUCT_MODE");
                     startActivityForResult(intent, 0);
                 }catch (ActivityNotFoundException e){
+                    //if not have scanner go to download scanner or not
                     showDialog((AppCompatActivity) getActivity(), "No Scanner Found", "Download a scanner code activity?", "Yes", "No").show();
                 }
                 getActivity().findViewById(R.id.goscanbarcode).setVisibility(View.INVISIBLE);
