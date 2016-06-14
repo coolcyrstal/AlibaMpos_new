@@ -91,7 +91,7 @@ public class StartPayment extends Fragment {
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 i.commit();
                 LoginPage.countPage = 2;
-                getActivity().setTitle("AlibaMpos");
+                getActivity().setTitle("AlipayMpos");
                 getActivity().findViewById(R.id.signin_button).setVisibility(View.INVISIBLE);
                 break;
             case R.id.history:

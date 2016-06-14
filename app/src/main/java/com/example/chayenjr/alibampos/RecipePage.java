@@ -90,7 +90,7 @@ public class RecipePage extends Fragment {
         i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
         i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         i.commit();
-        getActivity().setTitle("AlibaMpos's shop");
+        getActivity().setTitle("AlipayMpos's shop");
         getActivity().findViewById(R.id.signin_button).setVisibility(View.VISIBLE);
         LoginPage.countPage = 1;
     }

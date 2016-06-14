@@ -125,7 +125,7 @@ public class LoginPage extends AppCompatActivity{
                 a.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 m_id = ((EditText) findViewById(R.id.textUsername)).getText().toString();
                 tele_num = ((EditText) findViewById(R.id.textPassword)).getText().toString();
-                setTitle("OTP Check");
+                setTitle("OTP Verification");
                 a.commit();
             } else if(check_login == 1){
                 check_login = 2;
@@ -137,7 +137,7 @@ public class LoginPage extends AppCompatActivity{
                 getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
                 i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
                 i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                setTitle("AlibaMpos's shop");
+                setTitle("AlipayMpos's shop");
                 findViewById(R.id.username).setVisibility(View.INVISIBLE);
                 findViewById(R.id.password).setVisibility(View.INVISIBLE);
 //                i.commit();
@@ -188,7 +188,7 @@ public class LoginPage extends AppCompatActivity{
             i.replace(R.id.startpaymentPage, fragment).addToBackStack(null);
             i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             i.commit();
-            setTitle("AlibaMpos's shop");
+            setTitle("AlipayMpos's shop");
             countPage = 1;
         } else if(countPage == 3){
             MoneyValue fragment = new MoneyValue();
@@ -196,7 +196,7 @@ public class LoginPage extends AppCompatActivity{
             i.replace(R.id.moneypay, fragment).addToBackStack(null);
             i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             i.commit();
-            setTitle("AlibaMpos");
+            setTitle("AlipayMpos");
             countPage = 2;
         } else if(countPage == 4){
             ScanCodePage fragment = new ScanCodePage();
