@@ -164,7 +164,10 @@ public class MoneyValue extends Fragment {
                     case R.id.eight:money += "8";break;
                     case R.id.nine:money += "9";break;
                     case R.id.zero:money += "0";break;
-                    case R.id.zerozero:money += "00";break;
+                    case R.id.zerozero:
+                        if(money.length() == 9){
+                            money += "0";
+                        } else{money += "00";}break;
                     default:break;
                 }
             }
