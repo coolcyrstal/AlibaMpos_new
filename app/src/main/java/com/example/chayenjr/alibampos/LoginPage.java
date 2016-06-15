@@ -3,6 +3,7 @@ package com.example.chayenjr.alibampos;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.graphics.Point;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
@@ -32,6 +33,7 @@ public class LoginPage extends AppCompatActivity{
     public static int countPage = -1;
     public static String m_id = "", tele_num = "";
     private int newpoint_x = 680, newpoint_y = 20, point_x = 0,point_y = 0;
+    GradientDrawable gradientdrawable;
     private final Runnable mHidePart2Runnable = new Runnable() {
         @SuppressLint("InlinedApi")
         @Override

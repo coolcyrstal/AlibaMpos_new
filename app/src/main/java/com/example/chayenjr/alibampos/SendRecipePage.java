@@ -38,15 +38,6 @@ public class SendRecipePage extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SendRecipePage.
-     */
-    // TODO: Rename and change types and number of parameters
     public static SendRecipePage newInstance(String param1, String param2) {
         SendRecipePage fragment = new SendRecipePage();
         Bundle args = new Bundle();
@@ -86,17 +77,24 @@ public class SendRecipePage extends Fragment {
     }
 
     public void sendrecipe(View v){
-        if(((EditText) getActivity().findViewById(R.id.textemail)).getText().toString().equals("")){}
-        else{sendEmail();}
-        getActivity().findViewById(R.id.sendrecipebutton).setVisibility(View.INVISIBLE);
-        RecipePage fragment = new RecipePage();
-        FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
-        i.replace(R.id.recipepage, fragment).addToBackStack(null);
-        i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        i.commit();
-        LoginPage.countPage = 5;
+        EditText textemail = (EditText) getActivity().findViewById(R.id.textemail);
+        String str = textemail.getText().toString();
+        if(!(str.contains("@") && str.contains(".")) && !(str.equals(""))){
+            textemail.setError("Invalid email address");
+        } else if(str.equals("")){
+            getActivity().findViewById(R.id.sendrecipebutton).setVisibility(View.INVISIBLE);
+            RecipePage fragment = new RecipePage();
+            FragmentTransaction i = getActivity().getSupportFragmentManager().beginTransaction();
+            i.replace(R.id.recipepage, fragment).addToBackStack(null);
+            i.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            i.commit();
+            LoginPage.countPage = 5;
+        }
+        else{
+            sendEmail();
+        }
     }
-    // TODO: Rename method, update argument and hook method into UI event
+
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);

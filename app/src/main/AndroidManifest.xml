@@ -24,7 +24,7 @@
         <activity
             android:name=".LoginPage"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"
+            android:label="AlipayMpos"
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
